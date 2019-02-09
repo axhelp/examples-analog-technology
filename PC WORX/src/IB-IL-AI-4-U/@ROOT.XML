@@ -1,0 +1,1982 @@
+<project xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.kw-software.com/xml/PLCopen/TC6_XML_V10_KW.xsd">
+	<fileHeader companyName="Phoenix Contact" companyURL="https://www.phoenixcontact-software.com" productName="PC WORX" productVersion="6.30" productRelease="Build 500" creationDateTime="2019-02-09T17:21:27" contentDescription="###XMLINFO=2;1;"/>
+	<contentHeader name="IB-IL-AI-4-U" version="1549722088" modificationDateTime="2019-02-09T17:21:28" connectionCheck="true">
+		<coordinateInfo>
+			<pageSize x="999" y="9999"/>
+			<fbd>
+				<scaling x="2" y="2"/>
+			</fbd>
+			<ld>
+				<scaling x="2" y="2"/>
+			</ld>
+			<sfc>
+				<scaling x="2" y="2"/>
+			</sfc>
+		</coordinateInfo>
+	</contentHeader>
+	<libraries>
+		<library name="AnalogTechnology_6" firmware="false" path="D:\dev\examples-analog-technology\PC WORX\bin\libraries\AnalogTechnology_6\AnalogTechnology_6.mwt"/>
+	</libraries>
+	<types>
+		<dataTypes>
+			<datatypeWorksheet>
+				<html xmlns="http://www.w3.org/1999/xhtml">
+					<div xml:space="preserve" id="MWTDESCRIPTION" wsName="sys_flag_types" xmlns="http://www.w3.org/1999/xhtml">TYPE<br/>      Task_Name_Typ : ARRAY[0..9] OF BYTE;<br/>
+						<br/>      Extended_Task_Info   : STRUCT<br/>      TaskName          : Task_Name_Typ;  (* Name of the Task as ARRAY OF BYTE, NULL terminated *) <br/>      TaskPrio          : INT;            (* Priority of the task *)<br/>      undocumented_0    : INT;<br/>      TaskPeriod        : INT;            (* Period of the task in milliseconds *)<br/>      TaskStack         : INT;            (* Stack size of the task *)<br/>      unused_1          : INT;<br/>      TaskWatchdog      : INT;            (* Watchdog time in milliseconds *)<br/>      undocumented_2    : INT;<br/>      undocumented_3    : INT;<br/>      undocumented_4    : INT;<br/>      CurDuration       : INT;            (* Voltage task duration in ticks including preemption *)<br/>      MinDuration       : INT;            (* Minimum task duration in ticks including preemption *)<br/>      MaxDuration       : INT;            (* Maximum task duration in ticks including preemption *)<br/>      undocumented_5    : INT;<br/>      CurDelay          : INT;            (* Voltage task delay in ticks including preemption *)<br/>      MinDelay          : INT;            (* Minimum task delay in ticks including preemption *)<br/>      MaxDelay          : INT;            (* Maximum task delay in ticks including preemption *)<br/>   END_STRUCT;<br/>END_TYPE<br/>
+						<br/>TYPE<br/>	Task_Name_eCLR : ARRAY[0..35] OF BYTE;<br/>	<br/>	Task_Info_eCLR : STRUCT<br/>	TaskStack            : INT;            (* Stack size of the task *)<br/>	TaskPrio             : INT;            (* Priority of the task *)<br/>	TaskPeriod_us        : DINT;           (* Period of the task in microseconds *)<br/>	TaskWatchdog_us      : DINT;           (* Watchdog time in microseconds *)<br/>	TaskPeriod           : INT;            (* Period of the task in milliseconds *)<br/>	TaskWatchdog         : INT;            (* Watchdog time in milliseconds *)<br/>	MinDuration_us       : DINT;           (* Minimum task duration in microseconds including preemption *)<br/>	MaxDuration_us       : DINT;           (* Maximum task duration in microseconds including preemption *)<br/>	CurDuration_us       : DINT;           (* Current task duration in microseconds including preemption *)<br/>	MinDelay_us          : DINT;           (* Minimum task delay in microseconds including preemption *)<br/>	MaxDelay_us          : DINT;           (* Maximum task delay in microseconds including preemption *)<br/>	CurDelay_us          : DINT;           (* Current task delay in microseconds including preemption *)<br/>	MinDuration          : INT;            (* Minimum task duration in milliseconds including preemption *)<br/>	MaxDuration          : INT;            (* Maximum task duration in milliseconds including preemption *)<br/>	CurDuration          : INT;            (* Current task duration in milliseconds including preemption *)<br/>	MinDelay             : INT;            (* Minimum task delay in milliseconds including preemption *)<br/>	MaxDelay             : INT;            (* Maximum task delay in milliseconds including preemption *)<br/>	CurDelay             : INT;            (* Current task delay in milliseconds including preemption *)<br/>	unused_1             : DINT;<br/>	unused_2             : DINT;<br/>	unused_3             : DINT;<br/>	unused_4             : DINT;<br/>	unused_5             : DINT;<br/>	unused_6             : DINT;<br/>	unused_7             : DINT;<br/>	unused_8             : DINT;<br/>	unused_9             : DINT;<br/>	TNameMaxSize         : INT;<br/>	TNameSize            : INT;<br/>	TaskName             : Task_Name_eCLR;<br/>	END_STRUCT;<br/>END_TYPE<br/> <br/>TYPE<br/>	PND_IO_32  : ARRAY[0..31]  OF BYTE;<br/>	PND_IO_64  : ARRAY[0..63]  OF BYTE;<br/>	PND_IO_128 : ARRAY[0..127] OF BYTE;<br/>	PND_IO_256 : ARRAY[0..255] OF BYTE;<br/>	PND_IO_512 : ARRAY[0..511] OF BYTE;<br/>END_TYPE<br/>
+						<br/>TYPE<br/>	Redundancy_OPC_Struct : ARRAY[0..2] OF INT;<br/>END_TYPE<br/>
+						<br/>TYPE<br/>    MBT_STATION_DIAG : STRUCT<br/>    Status           : DWORD; (* Bit 0 = Station is online  *)<br/>                              (* Bit 1 = Exception exits *)<br/>    Handle           : DWORD;<br/>    OfflineCounter   : DWORD; (* Incremented by every shutdown of this station. *)<br/>
+						<br/>    NetCycleAvg      : DWORD; (* ms. NetInCycleAvg + NetOutCycleAvg *)<br/>    NetCycleMin      : DWORD; (* ms. *)<br/>    NetCycleMax      : DWORD; (* ms. *)<br/>
+						<br/>    NetInCycleAvg    : DWORD; (* ms. *)<br/>    NetInCycleMin    : DWORD; (* ms. *)<br/>    NetInCycleMax    : DWORD; (* ms. *)<br/>
+						<br/>    NetOutCycleAvg   : DWORD; (* ms. *)<br/>    NetOutCycleMin   : DWORD; (* ms. *)<br/>    NetOutCycleMax   : DWORD; (* ms. *)<br/>
+						<br/>    InternalError1   : DWORD; (* For internal use of Phoenix Contact! *)<br/>    InternalError2   : DWORD; (* For internal use of Phoenix Contact! *)<br/>
+						<br/>    ExceptionCounter : DWORD; (* Incremented by every Modbus exception received on this station. *)<br/>    DiagReserved1    : BYTE;  (* Reserved for a later use! *)<br/>    DiagReserved2    : BYTE;  (* Reserved for a later use! *)<br/>    StationNumber    : BYTE;  (* Modbus Station Number *)<br/>    DiagReserved3    : BYTE;  (* Reserved for a later use! *)<br/>    END_STRUCT;<br/>
+						<br/>    MBT_STATION_CONTROL : STRUCT<br/>    ctrlStatistics   : BYTE;  (* Bit 0 = Clear  statistics *)<br/>    ControlReserved1 : BYTE;  (* Reserved for a later use! *)<br/>    ControlReserved2 : WORD;  (* Reserved for a later use! *)<br/>    ControlReserved3 : DWORD; (* Reserved for a later use! *)<br/>    END_STRUCT;<br/>END_TYPE<br/>
+					</div>
+				</html>
+			</datatypeWorksheet>
+		</dataTypes>
+		<pous>
+			<pou name="Main" pouType="program" lastChange="2019-02-09T17:11:10">
+				<interface>
+					<localVars retain="false">
+						<variable name="IL_AI_4_UI_Para_01" group="FB">
+							<type>
+								<derived name="IL_AI_4_UI_Para_V1_03"/>
+							</type>
+						</variable>
+						<variable name="IL_AI_4_UI_Para_02" group="FB">
+							<type>
+								<derived name="IL_AI_4_UI_Para_V1_03"/>
+							</type>
+						</variable>
+						<variable name="IL_AI_4_UI_Para_03" group="FB">
+							<type>
+								<derived name="IL_AI_4_UI_Para_V1_03"/>
+							</type>
+						</variable>
+						<variable name="IL_AI_4_UI_Para_04" group="FB">
+							<type>
+								<derived name="IL_AI_4_UI_Para_V1_03"/>
+							</type>
+						</variable>
+						<variable name="IL_AI_4_UI_Diag_01" group="FB">
+							<type>
+								<derived name="IL_AI_4_UI_Diag_V1_03"/>
+							</type>
+						</variable>
+						<variable name="IL_AI_4_UI_Diag_02" group="FB">
+							<type>
+								<derived name="IL_AI_4_UI_Diag_V1_03"/>
+							</type>
+						</variable>
+						<variable name="IL_AI_4_UI_Diag_03" group="FB">
+							<type>
+								<derived name="IL_AI_4_UI_Diag_V1_03"/>
+							</type>
+						</variable>
+						<variable name="IL_AI_4_UI_Diag_04" group="FB">
+							<type>
+								<derived name="IL_AI_4_UI_Diag_V1_03"/>
+							</type>
+						</variable>
+						<variable name="IL_AI_4_UI_Com" group="FB">
+							<type>
+								<derived name="IL_AI_4_UI_Com_V1_04"/>
+							</type>
+						</variable>
+						<variable name="rVoltage_Input1" group="Internal">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="rVoltage_Input2" group="Internal">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="rVoltage_Input3" group="Internal">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="rVoltage_Input4" group="Internal">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="xDataValid_Input1" group="Internal">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xDataValid_Input2" group="Internal">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xDataValid_Input3" group="Internal">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xDataValid_Input4" group="Internal">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="IB_IL_AI4_Para" group="Internal">
+							<type>
+								<derived name="ANL_udt_Para_1_5"/>
+							</type>
+						</variable>
+						<variable name="IB_IL_AI4_Status" group="Internal">
+							<type>
+								<derived name="ANL_udt_Status_1_5"/>
+							</type>
+						</variable>
+					</localVars>
+					<externalVars retain="false">
+						<variable name="IB_IL_AI4_PD_IN" group="Global">
+							<type>
+								<derived name="ANL_ARR_W_1_4"/>
+							</type>
+						</variable>
+						<variable name="IB_IL_AI4_PD_OUT" group="Global">
+							<type>
+								<derived name="ANL_ARR_W_1_4"/>
+							</type>
+						</variable>
+					</externalVars>
+				</interface>
+				<body>
+					<FBD>
+						<worksheet name="Main" SizeX="400" SizeY="400">
+							<comment localId="0" width="30" height="3">
+								<position x="1" y="7"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#800000;background:#FFFFFF;font-weight:bold;font-style:normal;normal;font-family:Tahoma;width:0px; height:237px; font-size:14.25em" xmlns="http://www.w3.org/1999/xhtml">Параметризация каналов</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="1" width="4" height="2">
+								<position x="45" y="16"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>1</expression>
+							</inVariable>
+							<inVariable localId="2" width="4" height="2">
+								<position x="45" y="20"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>1</expression>
+							</inVariable>
+							<comment localId="3" width="11" height="3">
+								<position x="31" y="16"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">1 канал</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="4" width="8" height="2">
+								<position x="41" y="28"/>
+								<connectionPointOut>
+									<relPosition x="8" y="1"/>
+								</connectionPointOut>
+								<expression>100.0</expression>
+							</inVariable>
+							<inVariable localId="5" width="6" height="2">
+								<position x="43" y="32"/>
+								<connectionPointOut>
+									<relPosition x="6" y="1"/>
+								</connectionPointOut>
+								<expression>0.0</expression>
+							</inVariable>
+							<comment localId="6" width="28" height="3">
+								<position x="10" y="28"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">Нормализация он 0 до 100</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="7" width="16" height="2">
+								<position x="33" y="36"/>
+								<connectionPointOut>
+									<relPosition x="16" y="1"/>
+								</connectionPointOut>
+								<expression>IB_IL_AI4_Para</expression>
+							</inVariable>
+							<outVariable localId="8" width="16" height="2">
+								<position x="75" y="36"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="71" formalParameter="udtPara"/>
+								</connectionPointIn>
+								<expression>IB_IL_AI4_Para</expression>
+							</outVariable>
+							<inVariable localId="9" width="16" height="2">
+								<position x="35" y="191"/>
+								<connectionPointOut>
+									<relPosition x="16" y="1"/>
+								</connectionPointOut>
+								<expression>IB_IL_AI4_Para</expression>
+							</inVariable>
+							<outVariable localId="10" width="16" height="2">
+								<position x="77" y="191"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="109" formalParameter="udtPara"/>
+								</connectionPointIn>
+								<expression>IB_IL_AI4_Para</expression>
+							</outVariable>
+							<outVariable localId="11" width="18" height="2">
+								<position x="77" y="187"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="109" formalParameter="udtStatus"/>
+								</connectionPointIn>
+								<expression>IB_IL_AI4_Status</expression>
+							</outVariable>
+							<inVariable localId="12" width="18" height="2">
+								<position x="33" y="215"/>
+								<connectionPointOut>
+									<relPosition x="18" y="1"/>
+								</connectionPointOut>
+								<expression>IB_IL_AI4_Status</expression>
+							</inVariable>
+							<inVariable localId="13" width="18" height="2">
+								<position x="33" y="195"/>
+								<connectionPointOut>
+									<relPosition x="18" y="1"/>
+								</connectionPointOut>
+								<expression>IB_IL_AI4_PD_IN</expression>
+							</inVariable>
+							<outVariable localId="14" width="20" height="2">
+								<position x="77" y="195"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="109" formalParameter="arrProcOut"/>
+								</connectionPointIn>
+								<expression>IB_IL_AI4_PD_OUT</expression>
+							</outVariable>
+							<inVariable localId="15" width="4" height="2">
+								<position x="46" y="51"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>2</expression>
+							</inVariable>
+							<inVariable localId="16" width="4" height="2">
+								<position x="46" y="55"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>1</expression>
+							</inVariable>
+							<comment localId="17" width="11" height="3">
+								<position x="31" y="51"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">2 канал</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="18" width="8" height="2">
+								<position x="42" y="63"/>
+								<connectionPointOut>
+									<relPosition x="8" y="1"/>
+								</connectionPointOut>
+								<expression>100.0</expression>
+							</inVariable>
+							<inVariable localId="19" width="6" height="2">
+								<position x="44" y="67"/>
+								<connectionPointOut>
+									<relPosition x="6" y="1"/>
+								</connectionPointOut>
+								<expression>0.0</expression>
+							</inVariable>
+							<comment localId="20" width="28" height="3">
+								<position x="10" y="63"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">Нормализация он 0 до 100</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="21" width="16" height="2">
+								<position x="34" y="71"/>
+								<connectionPointOut>
+									<relPosition x="16" y="1"/>
+								</connectionPointOut>
+								<expression>IB_IL_AI4_Para</expression>
+							</inVariable>
+							<outVariable localId="22" width="16" height="2">
+								<position x="76" y="71"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="79" formalParameter="udtPara"/>
+								</connectionPointIn>
+								<expression>IB_IL_AI4_Para</expression>
+							</outVariable>
+							<inVariable localId="23" width="4" height="2">
+								<position x="46" y="87"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>3</expression>
+							</inVariable>
+							<inVariable localId="24" width="4" height="2">
+								<position x="46" y="91"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>1</expression>
+							</inVariable>
+							<comment localId="25" width="11" height="3">
+								<position x="31" y="87"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">3 канал</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="26" width="8" height="2">
+								<position x="42" y="99"/>
+								<connectionPointOut>
+									<relPosition x="8" y="1"/>
+								</connectionPointOut>
+								<expression>100.0</expression>
+							</inVariable>
+							<inVariable localId="27" width="6" height="2">
+								<position x="44" y="103"/>
+								<connectionPointOut>
+									<relPosition x="6" y="1"/>
+								</connectionPointOut>
+								<expression>0.0</expression>
+							</inVariable>
+							<comment localId="28" width="28" height="3">
+								<position x="10" y="99"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">Нормализация он 0 до 100</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="29" width="16" height="2">
+								<position x="34" y="107"/>
+								<connectionPointOut>
+									<relPosition x="16" y="1"/>
+								</connectionPointOut>
+								<expression>IB_IL_AI4_Para</expression>
+							</inVariable>
+							<outVariable localId="30" width="16" height="2">
+								<position x="76" y="107"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="87" formalParameter="udtPara"/>
+								</connectionPointIn>
+								<expression>IB_IL_AI4_Para</expression>
+							</outVariable>
+							<inVariable localId="31" width="4" height="2">
+								<position x="46" y="123"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>4</expression>
+							</inVariable>
+							<inVariable localId="32" width="4" height="2">
+								<position x="46" y="127"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>1</expression>
+							</inVariable>
+							<comment localId="33" width="11" height="3">
+								<position x="31" y="123"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">4 канал</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="34" width="8" height="2">
+								<position x="42" y="135"/>
+								<connectionPointOut>
+									<relPosition x="8" y="1"/>
+								</connectionPointOut>
+								<expression>100.0</expression>
+							</inVariable>
+							<inVariable localId="35" width="6" height="2">
+								<position x="44" y="139"/>
+								<connectionPointOut>
+									<relPosition x="6" y="1"/>
+								</connectionPointOut>
+								<expression>0.0</expression>
+							</inVariable>
+							<comment localId="36" width="28" height="3">
+								<position x="10" y="135"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">Нормализация он 0 до 100</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="37" width="16" height="2">
+								<position x="34" y="143"/>
+								<connectionPointOut>
+									<relPosition x="16" y="1"/>
+								</connectionPointOut>
+								<expression>IB_IL_AI4_Para</expression>
+							</inVariable>
+							<outVariable localId="38" width="16" height="2">
+								<position x="76" y="143"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="95" formalParameter="udtPara"/>
+								</connectionPointIn>
+								<expression>IB_IL_AI4_Para</expression>
+							</outVariable>
+							<inVariable localId="39" width="8" height="2">
+								<position x="43" y="171"/>
+								<connectionPointOut>
+									<relPosition x="8" y="1"/>
+								</connectionPointOut>
+								<expression>TRUE</expression>
+							</inVariable>
+							<inVariable localId="40" width="20" height="2">
+								<position x="31" y="175"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>BYTE#2#0000_1111</expression>
+							</inVariable>
+							<comment localId="41" width="16" height="3">
+								<position x="4" y="175"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">Все 4 канала</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="42" width="8" height="2">
+								<position x="43" y="179"/>
+								<connectionPointOut>
+									<relPosition x="8" y="1"/>
+								</connectionPointOut>
+								<expression>TRUE</expression>
+							</inVariable>
+							<inVariable localId="43" width="4" height="2">
+								<position x="47" y="219"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>1</expression>
+							</inVariable>
+							<comment localId="44" width="68" height="3">
+								<position x="1" y="162"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#800000;background:#FFFFFF;font-weight:bold;font-style:normal;normal;font-family:Tahoma;width:0px; height:237px; font-size:14.25em" xmlns="http://www.w3.org/1999/xhtml">Передача модулю параметров и получение данных от модуля</p>
+									</html>
+								</content>
+							</comment>
+							<comment localId="45" width="11" height="3">
+								<position x="20" y="219"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">1 канал</p>
+									</html>
+								</content>
+							</comment>
+							<comment localId="46" width="35" height="3">
+								<position x="2" y="206"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#800000;background:#FFFFFF;font-weight:bold;font-style:normal;normal;font-family:Tahoma;width:0px; height:237px; font-size:14.25em" xmlns="http://www.w3.org/1999/xhtml">Вывод значений и диагностика</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="47" width="18" height="2">
+								<position x="33" y="237"/>
+								<connectionPointOut>
+									<relPosition x="18" y="1"/>
+								</connectionPointOut>
+								<expression>IB_IL_AI4_Status</expression>
+							</inVariable>
+							<inVariable localId="48" width="4" height="2">
+								<position x="47" y="241"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>2</expression>
+							</inVariable>
+							<comment localId="49" width="11" height="3">
+								<position x="20" y="241"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">2 канал</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="50" width="18" height="2">
+								<position x="33" y="258"/>
+								<connectionPointOut>
+									<relPosition x="18" y="1"/>
+								</connectionPointOut>
+								<expression>IB_IL_AI4_Status</expression>
+							</inVariable>
+							<inVariable localId="51" width="4" height="2">
+								<position x="47" y="262"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>3</expression>
+							</inVariable>
+							<comment localId="52" width="11" height="3">
+								<position x="20" y="262"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">3 канал</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="53" width="18" height="2">
+								<position x="33" y="280"/>
+								<connectionPointOut>
+									<relPosition x="18" y="1"/>
+								</connectionPointOut>
+								<expression>IB_IL_AI4_Status</expression>
+							</inVariable>
+							<inVariable localId="54" width="4" height="2">
+								<position x="47" y="284"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>4</expression>
+							</inVariable>
+							<comment localId="55" width="11" height="3">
+								<position x="20" y="284"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">4 канал</p>
+									</html>
+								</content>
+							</comment>
+							<outVariable localId="56" width="16" height="2">
+								<position x="77" y="223"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="134" formalParameter="rCurrentValue"/>
+								</connectionPointIn>
+								<expression>rVoltage_Input1</expression>
+							</outVariable>
+							<outVariable localId="57" width="16" height="2">
+								<position x="77" y="245"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="135" formalParameter="rCurrentValue"/>
+								</connectionPointIn>
+								<expression>rVoltage_Input2</expression>
+							</outVariable>
+							<outVariable localId="58" width="16" height="2">
+								<position x="77" y="266"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="136" formalParameter="rCurrentValue"/>
+								</connectionPointIn>
+								<expression>rVoltage_Input3</expression>
+							</outVariable>
+							<outVariable localId="59" width="16" height="2">
+								<position x="77" y="288"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="137" formalParameter="rCurrentValue"/>
+								</connectionPointIn>
+								<expression>rVoltage_Input4</expression>
+							</outVariable>
+							<outVariable localId="60" width="18" height="2">
+								<position x="77" y="215"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="134" formalParameter="xDataValid"/>
+								</connectionPointIn>
+								<expression>xDataValid_Input1</expression>
+							</outVariable>
+							<outVariable localId="61" width="18" height="2">
+								<position x="77" y="237"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="135" formalParameter="xDataValid"/>
+								</connectionPointIn>
+								<expression>xDataValid_Input2</expression>
+							</outVariable>
+							<outVariable localId="62" width="18" height="2">
+								<position x="77" y="258"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="136" formalParameter="xDataValid"/>
+								</connectionPointIn>
+								<expression>xDataValid_Input3</expression>
+							</outVariable>
+							<outVariable localId="63" width="18" height="2">
+								<position x="77" y="280"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="137" formalParameter="xDataValid"/>
+								</connectionPointIn>
+								<expression>xDataValid_Input4</expression>
+							</outVariable>
+							<block width="22" height="28" typeName="IL_AI_4_UI_Para_V1_03" instanceName="IL_AI_4_UI_Para_01" localId="71">
+								<position x="51" y="13"/>
+								<inputVariables>
+									<variable formalParameter="iChannel" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="4"/>
+											<connection refLocalId="1"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="iMode" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="8"/>
+											<connection refLocalId="2"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="iFilter" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="12"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="rHighLimit" dataType="REAL" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="16"/>
+											<connection refLocalId="4"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="rLowLimit" dataType="REAL" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="20"/>
+											<connection refLocalId="5"/>
+										</connectionPointIn>
+									</variable>
+								</inputVariables>
+								<inOutVariables>
+									<variable formalParameter="udtPara" dataType="ANL_udt_Para_1_5">
+										<connectionPointIn>
+											<relPosition x="-2" y="24"/>
+											<connection refLocalId="7"/>
+										</connectionPointIn>
+										<connectionPointOut>
+											<relPosition x="26" y="24"/>
+										</connectionPointOut>
+									</variable>
+								</inOutVariables>
+								<outputVariables/>
+							</block>
+							<block width="22" height="28" typeName="IL_AI_4_UI_Para_V1_03" instanceName="IL_AI_4_UI_Para_02" localId="79">
+								<position x="52" y="48"/>
+								<inputVariables>
+									<variable formalParameter="iChannel" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="4"/>
+											<connection refLocalId="15"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="iMode" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="8"/>
+											<connection refLocalId="16"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="iFilter" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="12"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="rHighLimit" dataType="REAL" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="16"/>
+											<connection refLocalId="18"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="rLowLimit" dataType="REAL" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="20"/>
+											<connection refLocalId="19"/>
+										</connectionPointIn>
+									</variable>
+								</inputVariables>
+								<inOutVariables>
+									<variable formalParameter="udtPara" dataType="ANL_udt_Para_1_5">
+										<connectionPointIn>
+											<relPosition x="-2" y="24"/>
+											<connection refLocalId="21"/>
+										</connectionPointIn>
+										<connectionPointOut>
+											<relPosition x="26" y="24"/>
+										</connectionPointOut>
+									</variable>
+								</inOutVariables>
+								<outputVariables/>
+							</block>
+							<block width="22" height="28" typeName="IL_AI_4_UI_Para_V1_03" instanceName="IL_AI_4_UI_Para_03" localId="87">
+								<position x="52" y="84"/>
+								<inputVariables>
+									<variable formalParameter="iChannel" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="4"/>
+											<connection refLocalId="23"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="iMode" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="8"/>
+											<connection refLocalId="24"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="iFilter" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="12"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="rHighLimit" dataType="REAL" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="16"/>
+											<connection refLocalId="26"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="rLowLimit" dataType="REAL" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="20"/>
+											<connection refLocalId="27"/>
+										</connectionPointIn>
+									</variable>
+								</inputVariables>
+								<inOutVariables>
+									<variable formalParameter="udtPara" dataType="ANL_udt_Para_1_5">
+										<connectionPointIn>
+											<relPosition x="-2" y="24"/>
+											<connection refLocalId="29"/>
+										</connectionPointIn>
+										<connectionPointOut>
+											<relPosition x="26" y="24"/>
+										</connectionPointOut>
+									</variable>
+								</inOutVariables>
+								<outputVariables/>
+							</block>
+							<block width="22" height="28" typeName="IL_AI_4_UI_Para_V1_03" instanceName="IL_AI_4_UI_Para_04" localId="95">
+								<position x="52" y="120"/>
+								<inputVariables>
+									<variable formalParameter="iChannel" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="4"/>
+											<connection refLocalId="31"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="iMode" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="8"/>
+											<connection refLocalId="32"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="iFilter" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="12"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="rHighLimit" dataType="REAL" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="16"/>
+											<connection refLocalId="34"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="rLowLimit" dataType="REAL" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="20"/>
+											<connection refLocalId="35"/>
+										</connectionPointIn>
+									</variable>
+								</inputVariables>
+								<inOutVariables>
+									<variable formalParameter="udtPara" dataType="ANL_udt_Para_1_5">
+										<connectionPointIn>
+											<relPosition x="-2" y="24"/>
+											<connection refLocalId="37"/>
+										</connectionPointIn>
+										<connectionPointOut>
+											<relPosition x="26" y="24"/>
+										</connectionPointOut>
+									</variable>
+								</inOutVariables>
+								<outputVariables/>
+							</block>
+							<comment localId="96" width="36" height="33">
+								<position x="97" y="10"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">
+											<br/>iChannel:<br/>    Номер канала для параметризации<br/>
+											<br/>iMode:<br/>    0 -&gt;  0...10V , 0...20 mA (default)<br/>    1 -&gt;  +-10 V, 4...20 mA<br/>
+											<br/>rHighLimit/rLowLimit:<br/>    Нормализация от 0 до 100<br/>
+										</p>
+									</html>
+								</content>
+							</comment>
+							<block width="22" height="32" typeName="IL_AI_4_UI_Com_V1_04" instanceName="IL_AI_4_UI_Com" localId="109">
+								<position x="53" y="168"/>
+								<inputVariables>
+									<variable formalParameter="xActivate" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="4"/>
+											<connection refLocalId="39"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="bSelect" dataType="BYTE" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="8"/>
+											<connection refLocalId="40"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="xVoltage" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="12"/>
+											<connection refLocalId="42"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="arrProcIn" dataType="ANL_ARR_W_1_4" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="28"/>
+											<connection refLocalId="13"/>
+										</connectionPointIn>
+									</variable>
+								</inputVariables>
+								<inOutVariables>
+									<variable formalParameter="udtPara" dataType="ANL_udt_Para_1_5">
+										<connectionPointIn>
+											<relPosition x="-2" y="24"/>
+											<connection refLocalId="9"/>
+										</connectionPointIn>
+										<connectionPointOut>
+											<relPosition x="26" y="24"/>
+										</connectionPointOut>
+									</variable>
+								</inOutVariables>
+								<outputVariables>
+									<variable formalParameter="xReady" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="4"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="xError" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="8"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="wDiagCode" dataType="WORD" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="12"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="strFirmware" dataType="STRING" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="16"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="udtStatus" dataType="ANL_udt_Status_1_5" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="20"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="arrProcOut" dataType="ANL_ARR_W_1_4" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="28"/>
+										</connectionPointOut>
+									</variable>
+								</outputVariables>
+							</block>
+							<block width="22" height="16" typeName="IL_AI_4_UI_Diag_V1_03" instanceName="IL_AI_4_UI_Diag_01" localId="134">
+								<position x="53" y="212"/>
+								<inputVariables>
+									<variable formalParameter="udtStatus" dataType="ANL_udt_Status_1_5" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="4"/>
+											<connection refLocalId="12"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="iChannel" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="8"/>
+											<connection refLocalId="43"/>
+										</connectionPointIn>
+									</variable>
+								</inputVariables>
+								<inOutVariables/>
+								<outputVariables>
+									<variable formalParameter="xDataValid" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="4"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="wDiagCode" dataType="WORD" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="8"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="rCurrentValue" dataType="REAL" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="12"/>
+										</connectionPointOut>
+									</variable>
+								</outputVariables>
+							</block>
+							<block width="22" height="16" typeName="IL_AI_4_UI_Diag_V1_03" instanceName="IL_AI_4_UI_Diag_02" localId="135">
+								<position x="53" y="234"/>
+								<inputVariables>
+									<variable formalParameter="udtStatus" dataType="ANL_udt_Status_1_5" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="4"/>
+											<connection refLocalId="47"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="iChannel" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="8"/>
+											<connection refLocalId="48"/>
+										</connectionPointIn>
+									</variable>
+								</inputVariables>
+								<inOutVariables/>
+								<outputVariables>
+									<variable formalParameter="xDataValid" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="4"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="wDiagCode" dataType="WORD" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="8"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="rCurrentValue" dataType="REAL" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="12"/>
+										</connectionPointOut>
+									</variable>
+								</outputVariables>
+							</block>
+							<block width="22" height="16" typeName="IL_AI_4_UI_Diag_V1_03" instanceName="IL_AI_4_UI_Diag_03" localId="136">
+								<position x="53" y="255"/>
+								<inputVariables>
+									<variable formalParameter="udtStatus" dataType="ANL_udt_Status_1_5" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="4"/>
+											<connection refLocalId="50"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="iChannel" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="8"/>
+											<connection refLocalId="51"/>
+										</connectionPointIn>
+									</variable>
+								</inputVariables>
+								<inOutVariables/>
+								<outputVariables>
+									<variable formalParameter="xDataValid" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="4"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="wDiagCode" dataType="WORD" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="8"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="rCurrentValue" dataType="REAL" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="12"/>
+										</connectionPointOut>
+									</variable>
+								</outputVariables>
+							</block>
+							<block width="22" height="16" typeName="IL_AI_4_UI_Diag_V1_03" instanceName="IL_AI_4_UI_Diag_04" localId="137">
+								<position x="53" y="277"/>
+								<inputVariables>
+									<variable formalParameter="udtStatus" dataType="ANL_udt_Status_1_5" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="4"/>
+											<connection refLocalId="53"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="iChannel" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="8"/>
+											<connection refLocalId="54"/>
+										</connectionPointIn>
+									</variable>
+								</inputVariables>
+								<inOutVariables/>
+								<outputVariables>
+									<variable formalParameter="xDataValid" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="4"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="wDiagCode" dataType="WORD" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="8"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="rCurrentValue" dataType="REAL" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="12"/>
+										</connectionPointOut>
+									</variable>
+								</outputVariables>
+							</block>
+						</worksheet>
+					</FBD>
+				</body>
+				<documentation>
+					<html xmlns="http://www.w3.org/1999/xhtml">
+						<div xml:space="preserve" id="MWTDESCRIPTION" wsName="MainT" xmlns="http://www.w3.org/1999/xhtml"/>
+					</html>
+				</documentation>
+			</pou>
+		</pous>
+	</types>
+	<instances>
+		<configurations>
+			<configuration name="STD_CNF" plcType="eCLR">
+				<resource name="STD_RES" procType="ILC131_40" watchdogTimeDefaultTask="00:00:00.100" stackDefaultTask="MEDIUM" saveFPUDefaultTask="false" noSuspendDefaultTask="false">
+					<globalVars retain="false">
+						<variable name="COP_CPU_LOAD_WARNING" address="%MX1.60182.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">The controller is approaching its processor capacity limit</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_PARAM_2_REG" address="%MW1.60024" group="System Variables">
+							<type>
+								<WORD/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Extended diagnostic parameter register of the control processor</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_PARAM_REG" address="%MW1.60022" group="System Variables">
+							<type>
+								<WORD/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Diagnostic parameter register of the control processor</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FAT_ERR" address="%MX1.60157.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Fatal error (control processor)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FC_DBG" address="%MX1.60164.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime system DEBUG</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FC_HALT" address="%MX1.60162.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime system HALT</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FC_LDG" address="%MX1.60163.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime system LOADING</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FC_RDO" address="%MX1.60165.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime system READONLY</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FC_RUN" address="%MX1.60160.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime system RUN</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FC_STOP" address="%MX1.60161.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime system STOP</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_PON" address="%MX1.60159.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Power on (control processor)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_RT_ERR" address="%MX1.60156.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime error (control processor)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_WARN" address="%MX1.60158.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Warning (control processor)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="FLASHCARD_PRESENT" address="%MX1.60168.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Phoenix Contact SD card inserted</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="IB_DEVICE_PARAM_ACTIVATED" address="%MX1.60120.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Interbus device configuration activated</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="IB_DEVICE_PARAM_ERROR" address="%MX1.60122.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Interbus device configuration error</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="IB_DEVICE_PARAM_READY" address="%MX1.60121.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Interbus device configuration completed</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="KEY_SWITCH_RESET" address="%MX1.60178.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Start/stop switch in MRESET position</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="KEY_SWITCH_RUN_PROG" address="%MX1.60181.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Start/stop switch in RUN/PROG position</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="KEY_SWITCH_STOP" address="%MX1.60179.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Start/stop switch in STOP position</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="LICENSE" address="%MD1.60112" group="System Variables">
+							<type>
+								<DWORD/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">License information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_PARAM_2_REG_HI" address="%MB1.60005" group="System Variables">
+							<type>
+								<BYTE/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Extended master diagnostic parameter register 2 high byte</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_PARAM_2_REG_LOW" address="%MB1.60004" group="System Variables">
+							<type>
+								<BYTE/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Extended master diagnostic parameter register 2 low byte</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_PARAM_REG_HI" address="%MB1.60003" group="System Variables">
+							<type>
+								<BYTE/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Master diagnostic parameter register high byte</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_PARAM_REG_LOW" address="%MB1.60002" group="System Variables">
+							<type>
+								<BYTE/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Master diagnostic parameter register low byte</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_ACT" address="%MX1.60154.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Selected configuration ready to operate</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_BSA" address="%MX1.60140.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Bus segment disconnected</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_BUS" address="%MX1.60150.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Bus error</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_CTRL" address="%MX1.60151.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Fault on the controller board/hardware</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_DCR" address="%MX1.60144.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Faulty data cycles</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_DTC" address="%MX1.60152.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Diagnostic routine active</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_HI" address="%MB1.60001" group="System Variables">
+							<type>
+								<BYTE/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Master diagnostic status register high byte</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_LOW" address="%MB1.60000" group="System Variables">
+							<type>
+								<BYTE/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Master diagnostic status register low byte</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_PF" address="%MX1.60149.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Peripheral fault</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_QUAL" address="%MX1.60146.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Defined error density exceeded</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_RDY" address="%MX1.60155.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Controller board ready to operate</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_RES" address="%MX1.60142.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Standard function processed negatively</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_RUN" address="%MX1.60153.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Data transmission active</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_SSINFO" address="%MX1.60147.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Pending message</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_SYNCRES" address="%MX1.60143.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Synchronization error</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_SYSFAIL" address="%MX1.60141.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System failure</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_USER" address="%MX1.60148.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">User error/parameterization</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_WARN" address="%MX1.60145.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Defined warning time exceeded</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT" address="%MW1.60040" group="System Variables">
+							<type>
+								<WORD/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local inputs</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT0" address="%MX1.60183.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN1</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT1" address="%MX1.60184.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN2</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT2" address="%MX1.60185.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN3</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT3" address="%MX1.60186.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN4</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT4" address="%MX1.60187.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN5</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT5" address="%MX1.60188.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN6</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT6" address="%MX1.60189.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN7</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT7" address="%MX1.60190.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN8</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_OUTPUT_BIT0" address="%MX3.61000.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local output OUT1</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_OUTPUT_BIT1" address="%MX3.61001.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local output OUT2</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_OUTPUT_BIT2" address="%MX3.61002.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local output OUT3</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_OUTPUT_BIT3" address="%MX3.61003.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local output OUT4</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_OUTPUT_OVERLOAD_0_3" address="%MX1.60169.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local I/O overload</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_ERRORS" address="%MD1.2008" group="System Variables">
+							<type>
+								<DINT/>
+							</type>
+						</variable>
+						<variable name="PLC_MAX_ERRORS" address="%MD1.2004" group="System Variables">
+							<type>
+								<DINT/>
+							</type>
+						</variable>
+						<variable name="PLC_SYS_TICK_CNT" address="%MD1.0" group="System Variables">
+							<type>
+								<DINT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Number of system ticks</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_SYSTASK_AVAILABLE" address="%MW1.2016" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Number of available system tasks</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_1" address="%MB1.5000" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 1 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_2" address="%MB1.5128" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 2 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_3" address="%MB1.5256" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 3 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_4" address="%MB1.5384" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 4 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_5" address="%MB1.5512" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 5 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_6" address="%MB1.5640" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 6 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_7" address="%MB1.5768" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 7 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_8" address="%MB1.5896" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 8 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_AVAILABLE" address="%MW1.2012" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Number of available PLC tasks</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_DEFINED" address="%MW1.4" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Number of tasks used</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TICKS_PER_SEC" address="%MW1.2000" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System ticks per second</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCDEBUG_BPSET" address="%MX1.2019.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Breakpoint set</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCDEBUG_FORCE" address="%MX1.2018.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Variable(s) forced</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCDEBUG_POWERFLOW" address="%MX1.2020.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Address status enabled</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCMODE_HALT" address="%MX1.8.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">PLC status HALT</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCMODE_LOADING" address="%MX1.2017.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">PLC status LOADING</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCMODE_ON" address="%MX1.2016.0" pdd="true" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">PLC status ON</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCMODE_RUN" address="%MX1.7.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">PLC status RUN</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCMODE_STOP" address="%MX1.6.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">PLC status STOP</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="POWER_SUPPLY_INPUTS_OK" address="%MX1.60172.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">24 V local input supply OK</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="POWER_SUPPLY_MAIN_OK" address="%MX1.60171.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">24 V main supply voltage OK</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="POWER_SUPPLY_OUTPUTS_0_3_OK" address="%MX1.60173.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">24 V local output supply OK (bits 0...3)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_BATTERY_LOW" address="%MX1.60166.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Realtime clock battery capacity low</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_DATA_INVALID" address="%MX1.60167.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Realtime clock data invalid</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_DAY" address="%MW1.60068" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System time (day)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_HOURS" address="%MW1.60060" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System time (hours)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_MINUTES" address="%MW1.60062" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System time (minutes)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_MONTH" address="%MW1.60070" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System time (month)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_SECONDS" address="%MW1.60064" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System time (seconds)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_YEAR" address="%MW1.60072" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System time (year)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="IB_IL_AI4_PD_IN" address="%IB1" group="Process Data">
+							<type>
+								<derived name="ANL_ARR_W_1_4"/>
+							</type>
+						</variable>
+						<variable name="IB_IL_AI4_PD_OUT" address="%QB1" group="Process Data">
+							<type>
+								<derived name="ANL_ARR_W_1_4"/>
+							</type>
+						</variable>
+					</globalVars>
+					<pouInstance name="Main:Main" type="program">
+						<globalVarsPg retain="false">
+							<variable name="" group="Default">
+								<type>
+									<INT/>
+								</type>
+							</variable>
+						</globalVarsPg>
+					</pouInstance>
+				</resource>
+			</configuration>
+		</configurations>
+	</instances>
+</project>

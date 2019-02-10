@@ -1,0 +1,960 @@
+<project xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.kw-software.com/xml/PLCopen/TC6_XML_V10_KW.xsd">
+	<fileHeader companyName="Phoenix Contact" companyURL="https://www.phoenixcontact-software.com" productName="PC WORX" productVersion="6.30" productRelease="Build 500" creationDateTime="2019-02-10T17:34:33" contentDescription="###XMLINFO=2;1;"/>
+	<contentHeader name="IB-IL-AI-2-SF" version="1549811060" modificationDateTime="2019-02-10T18:04:20" connectionCheck="true">
+		<coordinateInfo>
+			<pageSize x="999" y="9999"/>
+			<fbd>
+				<scaling x="2" y="2"/>
+			</fbd>
+			<ld>
+				<scaling x="2" y="2"/>
+			</ld>
+			<sfc>
+				<scaling x="2" y="2"/>
+			</sfc>
+		</coordinateInfo>
+	</contentHeader>
+	<types>
+		<dataTypes/>
+		<pous/>
+	</types>
+	<instances>
+		<configurations>
+			<configuration name="STD_CNF" plcType="eCLR">
+				<resource name="STD_RES" procType="ILC131_40" watchdogTimeDefaultTask="00:00:00.100" stackDefaultTask="MEDIUM" saveFPUDefaultTask="false" noSuspendDefaultTask="false">
+					<globalVars retain="false">
+						<variable name="COP_CPU_LOAD_WARNING" address="%MX1.60182.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">The controller is approaching its processor capacity limit</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_PARAM_2_REG" address="%MW1.60024" group="System Variables">
+							<type>
+								<WORD/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Extended diagnostic parameter register of the control processor</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_PARAM_REG" address="%MW1.60022" group="System Variables">
+							<type>
+								<WORD/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Diagnostic parameter register of the control processor</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FAT_ERR" address="%MX1.60157.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Fatal error (control processor)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FC_DBG" address="%MX1.60164.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime system DEBUG</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FC_HALT" address="%MX1.60162.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime system HALT</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FC_LDG" address="%MX1.60163.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime system LOADING</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FC_RDO" address="%MX1.60165.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime system READONLY</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FC_RUN" address="%MX1.60160.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime system RUN</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FC_STOP" address="%MX1.60161.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime system STOP</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_PON" address="%MX1.60159.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Power on (control processor)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_RT_ERR" address="%MX1.60156.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime error (control processor)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_WARN" address="%MX1.60158.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Warning (control processor)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="FLASHCARD_PRESENT" address="%MX1.60168.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Phoenix Contact SD card inserted</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="IB_DEVICE_PARAM_ACTIVATED" address="%MX1.60120.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Interbus device configuration activated</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="IB_DEVICE_PARAM_ERROR" address="%MX1.60122.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Interbus device configuration error</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="IB_DEVICE_PARAM_READY" address="%MX1.60121.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Interbus device configuration completed</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="KEY_SWITCH_RESET" address="%MX1.60178.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Start/stop switch in MRESET position</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="KEY_SWITCH_RUN_PROG" address="%MX1.60181.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Start/stop switch in RUN/PROG position</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="KEY_SWITCH_STOP" address="%MX1.60179.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Start/stop switch in STOP position</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="LICENSE" address="%MD1.60112" group="System Variables">
+							<type>
+								<DWORD/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">License information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_PARAM_2_REG_HI" address="%MB1.60005" group="System Variables">
+							<type>
+								<BYTE/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Extended master diagnostic parameter register 2 high byte</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_PARAM_2_REG_LOW" address="%MB1.60004" group="System Variables">
+							<type>
+								<BYTE/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Extended master diagnostic parameter register 2 low byte</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_PARAM_REG_HI" address="%MB1.60003" group="System Variables">
+							<type>
+								<BYTE/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Master diagnostic parameter register high byte</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_PARAM_REG_LOW" address="%MB1.60002" group="System Variables">
+							<type>
+								<BYTE/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Master diagnostic parameter register low byte</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_ACT" address="%MX1.60154.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Selected configuration ready to operate</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_BSA" address="%MX1.60140.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Bus segment disconnected</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_BUS" address="%MX1.60150.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Bus error</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_CTRL" address="%MX1.60151.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Fault on the controller board/hardware</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_DCR" address="%MX1.60144.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Faulty data cycles</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_DTC" address="%MX1.60152.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Diagnostic routine active</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_HI" address="%MB1.60001" group="System Variables">
+							<type>
+								<BYTE/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Master diagnostic status register high byte</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_LOW" address="%MB1.60000" group="System Variables">
+							<type>
+								<BYTE/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Master diagnostic status register low byte</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_PF" address="%MX1.60149.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Peripheral fault</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_QUAL" address="%MX1.60146.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Defined error density exceeded</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_RDY" address="%MX1.60155.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Controller board ready to operate</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_RES" address="%MX1.60142.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Standard function processed negatively</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_RUN" address="%MX1.60153.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Data transmission active</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_SSINFO" address="%MX1.60147.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Pending message</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_SYNCRES" address="%MX1.60143.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Synchronization error</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_SYSFAIL" address="%MX1.60141.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System failure</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_USER" address="%MX1.60148.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">User error/parameterization</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_WARN" address="%MX1.60145.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Defined warning time exceeded</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT" address="%MW1.60040" group="System Variables">
+							<type>
+								<WORD/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local inputs</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT0" address="%MX1.60183.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN1</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT1" address="%MX1.60184.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN2</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT2" address="%MX1.60185.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN3</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT3" address="%MX1.60186.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN4</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT4" address="%MX1.60187.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN5</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT5" address="%MX1.60188.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN6</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT6" address="%MX1.60189.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN7</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT7" address="%MX1.60190.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN8</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_OUTPUT_BIT0" address="%MX3.61000.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local output OUT1</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_OUTPUT_BIT1" address="%MX3.61001.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local output OUT2</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_OUTPUT_BIT2" address="%MX3.61002.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local output OUT3</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_OUTPUT_BIT3" address="%MX3.61003.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local output OUT4</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_OUTPUT_OVERLOAD_0_3" address="%MX1.60169.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local I/O overload</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_ERRORS" address="%MD1.2008" group="System Variables">
+							<type>
+								<DINT/>
+							</type>
+						</variable>
+						<variable name="PLC_MAX_ERRORS" address="%MD1.2004" group="System Variables">
+							<type>
+								<DINT/>
+							</type>
+						</variable>
+						<variable name="PLC_SYS_TICK_CNT" address="%MD1.0" group="System Variables">
+							<type>
+								<DINT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Number of system ticks</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_SYSTASK_AVAILABLE" address="%MW1.2016" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Number of available system tasks</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_1" address="%MB1.5000" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 1 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_2" address="%MB1.5128" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 2 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_3" address="%MB1.5256" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 3 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_4" address="%MB1.5384" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 4 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_5" address="%MB1.5512" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 5 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_6" address="%MB1.5640" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 6 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_7" address="%MB1.5768" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 7 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_8" address="%MB1.5896" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 8 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_AVAILABLE" address="%MW1.2012" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Number of available PLC tasks</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_DEFINED" address="%MW1.4" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Number of tasks used</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TICKS_PER_SEC" address="%MW1.2000" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System ticks per second</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCDEBUG_BPSET" address="%MX1.2019.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Breakpoint set</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCDEBUG_FORCE" address="%MX1.2018.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Variable(s) forced</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCDEBUG_POWERFLOW" address="%MX1.2020.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Address status enabled</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCMODE_HALT" address="%MX1.8.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">PLC status HALT</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCMODE_LOADING" address="%MX1.2017.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">PLC status LOADING</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCMODE_ON" address="%MX1.2016.0" pdd="true" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">PLC status ON</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCMODE_RUN" address="%MX1.7.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">PLC status RUN</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCMODE_STOP" address="%MX1.6.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">PLC status STOP</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="POWER_SUPPLY_INPUTS_OK" address="%MX1.60172.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">24 V local input supply OK</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="POWER_SUPPLY_MAIN_OK" address="%MX1.60171.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">24 V main supply voltage OK</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="POWER_SUPPLY_OUTPUTS_0_3_OK" address="%MX1.60173.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">24 V local output supply OK (bits 0...3)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_BATTERY_LOW" address="%MX1.60166.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Realtime clock battery capacity low</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_DATA_INVALID" address="%MX1.60167.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Realtime clock data invalid</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_DAY" address="%MW1.60068" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System time (day)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_HOURS" address="%MW1.60060" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System time (hours)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_MINUTES" address="%MW1.60062" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System time (minutes)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_MONTH" address="%MW1.60070" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System time (month)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_SECONDS" address="%MW1.60064" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System time (seconds)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_YEAR" address="%MW1.60072" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System time (year)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="I_0_1_AI_1_VOLTAGE" address="%IW1" group="Auto">
+							<type>
+								<WORD/>
+							</type>
+						</variable>
+						<variable name="I_0_1_AI_2_CURRENT" address="%IW3" group="Auto">
+							<type>
+								<WORD/>
+							</type>
+						</variable>
+						<variable name="Q_0_1_CONTROL_CONTROL_WORD_1" address="%QW1" group="Auto">
+							<type>
+								<WORD/>
+							</type>
+						</variable>
+						<variable name="Q_0_1_CONTROL_CONTROL_WORD_2" address="%QW3" group="Auto">
+							<type>
+								<WORD/>
+							</type>
+						</variable>
+					</globalVars>
+					<pouInstance name="Main:Main" type="program">
+						<globalVarsPg retain="false">
+							<variable name="" group="Default">
+								<type>
+									<INT/>
+								</type>
+							</variable>
+						</globalVarsPg>
+					</pouInstance>
+				</resource>
+			</configuration>
+		</configurations>
+	</instances>
+</project>

@@ -1,0 +1,604 @@
+<project xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.kw-software.com/xml/PLCopen/TC6_XML_V10_KW.xsd">
+	<fileHeader companyName="Phoenix Contact" companyURL="https://www.phoenixcontact-software.com" productName="PC WORX" productVersion="6.30" productRelease="Build 500" creationDateTime="2019-02-10T17:12:26" contentDescription="###XMLINFO=2;1;"/>
+	<contentHeader name="IB-IL-AO-2-UI" version="1549807946" modificationDateTime="2019-02-10T17:12:26" connectionCheck="true">
+		<coordinateInfo>
+			<pageSize x="999" y="9999"/>
+			<fbd>
+				<scaling x="2" y="2"/>
+			</fbd>
+			<ld>
+				<scaling x="2" y="2"/>
+			</ld>
+			<sfc>
+				<scaling x="2" y="2"/>
+			</sfc>
+		</coordinateInfo>
+	</contentHeader>
+	<types>
+		<dataTypes/>
+		<pous>
+			<pou name="Main" pouType="program" lastChange="2019-02-10T17:07:39">
+				<interface>
+					<localVars retain="false">
+						<variable name="IL_AO_2_UI_Para_01" group="FB">
+							<type>
+								<derived name="IL_AO_2_UI_Para_V1_01"/>
+							</type>
+						</variable>
+						<variable name="IL_AO_2_UI_Para_02" group="FB">
+							<type>
+								<derived name="IL_AO_2_UI_Para_V1_01"/>
+							</type>
+						</variable>
+						<variable name="IL_AO_2_UI" group="FB">
+							<type>
+								<derived name="IL_AO_2_UI_V1_01"/>
+							</type>
+						</variable>
+						<variable name="IL_AO_2_UI_Diag_01" group="FB">
+							<type>
+								<derived name="IL_AO_2_UI_Diag_V1_01"/>
+							</type>
+						</variable>
+						<variable name="IL_AO_2_UI_Diag_02" group="FB">
+							<type>
+								<derived name="IL_AO_2_UI_Diag_V1_01"/>
+							</type>
+						</variable>
+						<variable name="arrAO2_UI_Para" group="Internal">
+							<type>
+								<derived name="ANL_ARR_Para_1_2"/>
+							</type>
+						</variable>
+						<variable name="arrAO2_UI_Diag" group="Internal">
+							<type>
+								<derived name="ANL_ARR_Diag_1_2"/>
+							</type>
+						</variable>
+						<variable name="rVoltage_Output_0_10" group="Internal">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="rCurrent_Output_4_20" group="Internal">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="xError_AO2UI" group="Internal">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xError_Ch1" group="Internal">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xError_Ch2" group="Internal">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+					</localVars>
+					<externalVars retain="false">
+						<variable name="ARR_AO2UI_PD_IN" group="Global">
+							<type>
+								<derived name="ANL_ARR_W_1_4"/>
+							</type>
+						</variable>
+						<variable name="ARR_AO2UI_PD_OUT" group="Global">
+							<type>
+								<derived name="ANL_ARR_W_1_4"/>
+							</type>
+						</variable>
+					</externalVars>
+				</interface>
+				<body>
+					<FBD>
+						<worksheet name="Main" SizeX="400" SizeY="400">
+							<block width="25" height="28" typeName="IL_AO_2_UI_Para_V1_01" instanceName="IL_AO_2_UI_Para_01" localId="7">
+								<position x="25" y="14"/>
+								<inputVariables>
+									<variable formalParameter="iChannelNo" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="4"/>
+											<connection refLocalId="27"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="iRange" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="8"/>
+											<connection refLocalId="41"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="rHiLim" dataType="REAL" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="12"/>
+											<connection refLocalId="50"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="rLoLim" dataType="REAL" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="16"/>
+											<connection refLocalId="49"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="rSetValue" dataType="REAL" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="20"/>
+											<connection refLocalId="45"/>
+										</connectionPointIn>
+									</variable>
+								</inputVariables>
+								<inOutVariables>
+									<variable formalParameter="arrParameter" dataType="ANL_ARR_Para_1_2">
+										<connectionPointIn>
+											<relPosition x="-2" y="24"/>
+											<connection refLocalId="36"/>
+										</connectionPointIn>
+										<connectionPointOut>
+											<relPosition x="29" y="24"/>
+										</connectionPointOut>
+									</variable>
+								</inOutVariables>
+								<outputVariables/>
+							</block>
+							<block width="26" height="28" typeName="IL_AO_2_UI_V1_01" instanceName="IL_AO_2_UI" localId="19">
+								<position x="32" y="56"/>
+								<inputVariables>
+									<variable formalParameter="xActivate" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="4"/>
+											<connection refLocalId="48">
+												<position x="30" y="60" pathnode="false"/>
+												<position x="29" y="60" pathnode="false"/>
+											</connection>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="iSelectCH" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="8"/>
+											<connection refLocalId="53">
+												<position x="30" y="64" pathnode="false"/>
+												<position x="29" y="64" pathnode="false"/>
+											</connection>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="arrParameter" dataType="ANL_ARR_Para_1_2" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="12"/>
+											<connection refLocalId="57"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="arrProcIN" dataType="ANL_ARR_W_1_4" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="16"/>
+											<connection refLocalId="58"/>
+										</connectionPointIn>
+									</variable>
+								</inputVariables>
+								<inOutVariables/>
+								<outputVariables>
+									<variable formalParameter="xReady" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointOut>
+											<relPosition x="28" y="4"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="xError" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointOut>
+											<relPosition x="28" y="8"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="wDiagCode" dataType="WORD" hideable="true">
+										<connectionPointOut>
+											<relPosition x="28" y="12"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="wAddDiagCode" dataType="WORD" hideable="true">
+										<connectionPointOut>
+											<relPosition x="28" y="16"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="arrDiag" dataType="ANL_ARR_Diag_1_2" hideable="true">
+										<connectionPointOut>
+											<relPosition x="28" y="20"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="arrProcOUT" dataType="ANL_ARR_W_1_4" hideable="true">
+										<connectionPointOut>
+											<relPosition x="28" y="24"/>
+										</connectionPointOut>
+									</variable>
+								</outputVariables>
+							</block>
+							<block width="22" height="16" typeName="IL_AO_2_UI_Diag_V1_01" instanceName="IL_AO_2_UI_Diag_01" localId="25">
+								<position x="26" y="93"/>
+								<inputVariables>
+									<variable formalParameter="iChannelNo" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="4"/>
+											<connection refLocalId="59"/>
+										</connectionPointIn>
+									</variable>
+								</inputVariables>
+								<inOutVariables>
+									<variable formalParameter="arrDiag" dataType="ANL_ARR_Diag_1_2">
+										<connectionPointIn>
+											<relPosition x="-2" y="12"/>
+											<connection refLocalId="68"/>
+										</connectionPointIn>
+										<connectionPointOut>
+											<relPosition x="26" y="12"/>
+										</connectionPointOut>
+									</variable>
+								</inOutVariables>
+								<outputVariables>
+									<variable formalParameter="xError" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="4"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="wErrorCode" dataType="WORD" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="8"/>
+										</connectionPointOut>
+									</variable>
+								</outputVariables>
+							</block>
+							<comment localId="26" width="31" height="3">
+								<position x="3" y="7"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#800000;background:#FFFFFF;font-weight:bold;font-style:normal;normal;font-family:Tahoma;width:0px; height:237px; font-size:14.25em" xmlns="http://www.w3.org/1999/xhtml">Параметризация каналов</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="27" width="4" height="2">
+								<position x="19" y="17"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>1</expression>
+							</inVariable>
+							<block width="25" height="28" typeName="IL_AO_2_UI_Para_V1_01" instanceName="IL_AO_2_UI_Para_02" localId="35">
+								<position x="92" y="14"/>
+								<inputVariables>
+									<variable formalParameter="iChannelNo" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="4"/>
+											<connection refLocalId="40"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="iRange" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="8"/>
+											<connection refLocalId="42"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="rHiLim" dataType="REAL" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="12"/>
+											<connection refLocalId="52"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="rLoLim" dataType="REAL" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="16"/>
+											<connection refLocalId="51"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="rSetValue" dataType="REAL" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="20"/>
+											<connection refLocalId="46"/>
+										</connectionPointIn>
+									</variable>
+								</inputVariables>
+								<inOutVariables>
+									<variable formalParameter="arrParameter" dataType="ANL_ARR_Para_1_2">
+										<connectionPointIn>
+											<relPosition x="-2" y="24"/>
+											<connection refLocalId="38"/>
+										</connectionPointIn>
+										<connectionPointOut>
+											<relPosition x="29" y="24"/>
+										</connectionPointOut>
+									</variable>
+								</inOutVariables>
+								<outputVariables/>
+							</block>
+							<inVariable localId="36" width="16" height="2">
+								<position x="7" y="37"/>
+								<connectionPointOut>
+									<relPosition x="16" y="1"/>
+								</connectionPointOut>
+								<expression>arrAO2_UI_Para</expression>
+							</inVariable>
+							<outVariable localId="37" width="16" height="2">
+								<position x="52" y="37"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="7" formalParameter="arrParameter"/>
+								</connectionPointIn>
+								<expression>arrAO2_UI_Para</expression>
+							</outVariable>
+							<inVariable localId="38" width="16" height="2">
+								<position x="74" y="37"/>
+								<connectionPointOut>
+									<relPosition x="16" y="1"/>
+								</connectionPointOut>
+								<expression>arrAO2_UI_Para</expression>
+							</inVariable>
+							<outVariable localId="39" width="16" height="2">
+								<position x="119" y="37"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="35" formalParameter="arrParameter"/>
+								</connectionPointIn>
+								<expression>arrAO2_UI_Para</expression>
+							</outVariable>
+							<inVariable localId="40" width="4" height="2">
+								<position x="86" y="17"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>2</expression>
+							</inVariable>
+							<inVariable localId="41" width="4" height="2">
+								<position x="19" y="21"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>0</expression>
+							</inVariable>
+							<inVariable localId="42" width="4" height="2">
+								<position x="86" y="21"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>4</expression>
+							</inVariable>
+							<comment localId="43" width="18" height="3">
+								<position x="69" y="21"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">4 mA ... 20 mA</p>
+									</html>
+								</content>
+							</comment>
+							<comment localId="44" width="12" height="3">
+								<position x="8" y="21"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">0 ..10 V</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="45" width="21" height="2">
+								<position x="2" y="33"/>
+								<connectionPointOut>
+									<relPosition x="21" y="1"/>
+								</connectionPointOut>
+								<expression>rVoltage_Output_0_10</expression>
+							</inVariable>
+							<inVariable localId="46" width="21" height="2">
+								<position x="69" y="33"/>
+								<connectionPointOut>
+									<relPosition x="21" y="1"/>
+								</connectionPointOut>
+								<expression>rCurrent_Output_4_20</expression>
+							</inVariable>
+							<outVariable localId="47" width="21" height="2">
+								<position x="60" y="79"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="19" formalParameter="arrProcOUT"/>
+								</connectionPointIn>
+								<expression>ARR_AO2UI_PD_OUT</expression>
+							</outVariable>
+							<inVariable localId="48" width="8" height="2">
+								<position x="21" y="59"/>
+								<connectionPointOut>
+									<relPosition x="8" y="1"/>
+								</connectionPointOut>
+								<expression>TRUE</expression>
+							</inVariable>
+							<inVariable localId="49" width="6" height="2">
+								<position x="17" y="29"/>
+								<connectionPointOut>
+									<relPosition x="6" y="1"/>
+								</connectionPointOut>
+								<expression>0.0</expression>
+							</inVariable>
+							<inVariable localId="50" width="8" height="2">
+								<position x="15" y="25"/>
+								<connectionPointOut>
+									<relPosition x="8" y="1"/>
+								</connectionPointOut>
+								<expression>100.0</expression>
+							</inVariable>
+							<inVariable localId="51" width="6" height="2">
+								<position x="84" y="29"/>
+								<connectionPointOut>
+									<relPosition x="6" y="1"/>
+								</connectionPointOut>
+								<expression>0.0</expression>
+							</inVariable>
+							<inVariable localId="52" width="8" height="2">
+								<position x="82" y="25"/>
+								<connectionPointOut>
+									<relPosition x="8" y="1"/>
+								</connectionPointOut>
+								<expression>100.0</expression>
+							</inVariable>
+							<inVariable localId="53" width="4" height="2">
+								<position x="25" y="63"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>3</expression>
+							</inVariable>
+							<comment localId="54" width="15" height="3">
+								<position x="2" y="59"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">Канал 1 и 2</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="57" width="16" height="2">
+								<position x="14" y="67"/>
+								<connectionPointOut>
+									<relPosition x="16" y="1"/>
+								</connectionPointOut>
+								<expression>arrAO2_UI_Para</expression>
+							</inVariable>
+							<inVariable localId="58" width="19" height="2">
+								<position x="11" y="71"/>
+								<connectionPointOut>
+									<relPosition x="19" y="1"/>
+								</connectionPointOut>
+								<expression>ARR_AO2UI_PD_IN</expression>
+							</inVariable>
+							<inVariable localId="59" width="4" height="2">
+								<position x="20" y="96"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>1</expression>
+							</inVariable>
+							<comment localId="60" width="61" height="3">
+								<position x="3" y="49"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#800000;background:#FFFFFF;font-weight:bold;font-style:normal;normal;font-family:Tahoma;width:0px; height:237px; font-size:14.25em" xmlns="http://www.w3.org/1999/xhtml">Передача модулю параметров и выдача кода сигнала</p>
+									</html>
+								</content>
+							</comment>
+							<block width="22" height="16" typeName="IL_AO_2_UI_Diag_V1_01" instanceName="IL_AO_2_UI_Diag_02" localId="66">
+								<position x="92" y="93"/>
+								<inputVariables>
+									<variable formalParameter="iChannelNo" dataType="INT" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="4"/>
+											<connection refLocalId="76"/>
+										</connectionPointIn>
+									</variable>
+								</inputVariables>
+								<inOutVariables>
+									<variable formalParameter="arrDiag" dataType="ANL_ARR_Diag_1_2">
+										<connectionPointIn>
+											<relPosition x="-2" y="12"/>
+											<connection refLocalId="70"/>
+										</connectionPointIn>
+										<connectionPointOut>
+											<relPosition x="26" y="12"/>
+										</connectionPointOut>
+									</variable>
+								</inOutVariables>
+								<outputVariables>
+									<variable formalParameter="xError" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="4"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="wErrorCode" dataType="WORD" hideable="true">
+										<connectionPointOut>
+											<relPosition x="24" y="8"/>
+										</connectionPointOut>
+									</variable>
+								</outputVariables>
+							</block>
+							<outVariable localId="67" width="16" height="2">
+								<position x="60" y="75"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="19" formalParameter="arrDiag"/>
+								</connectionPointIn>
+								<expression>arrAO2_UI_Diag</expression>
+							</outVariable>
+							<inVariable localId="68" width="16" height="2">
+								<position x="8" y="104"/>
+								<connectionPointOut>
+									<relPosition x="16" y="1"/>
+								</connectionPointOut>
+								<expression>arrAO2_UI_Diag</expression>
+							</inVariable>
+							<outVariable localId="69" width="16" height="2">
+								<position x="50" y="104"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="25" formalParameter="arrDiag"/>
+								</connectionPointIn>
+								<expression>arrAO2_UI_Diag</expression>
+							</outVariable>
+							<inVariable localId="70" width="16" height="2">
+								<position x="74" y="104"/>
+								<connectionPointOut>
+									<relPosition x="16" y="1"/>
+								</connectionPointOut>
+								<expression>arrAO2_UI_Diag</expression>
+							</inVariable>
+							<outVariable localId="71" width="16" height="2">
+								<position x="116" y="104"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="66" formalParameter="arrDiag"/>
+								</connectionPointIn>
+								<expression>arrAO2_UI_Diag</expression>
+							</outVariable>
+							<outVariable localId="72" width="12" height="2">
+								<position x="50" y="96"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="25" formalParameter="xError"/>
+								</connectionPointIn>
+								<expression>xError_Ch1</expression>
+							</outVariable>
+							<outVariable localId="73" width="12" height="2">
+								<position x="116" y="96"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="66" formalParameter="xError"/>
+								</connectionPointIn>
+								<expression>xError_Ch2</expression>
+							</outVariable>
+							<outVariable localId="74" width="14" height="2">
+								<position x="60" y="63"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="19" formalParameter="xError"/>
+								</connectionPointIn>
+								<expression>xError_AO2UI</expression>
+							</outVariable>
+							<comment localId="75" width="18" height="3">
+								<position x="2" y="87"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#800000;background:#FFFFFF;font-weight:bold;font-style:normal;normal;font-family:Tahoma;width:0px; height:237px; font-size:14.25em" xmlns="http://www.w3.org/1999/xhtml">Диагностика</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="76" width="4" height="2">
+								<position x="86" y="96"/>
+								<connectionPointOut>
+									<relPosition x="4" y="1"/>
+								</connectionPointOut>
+								<expression>2</expression>
+							</inVariable>
+						</worksheet>
+					</FBD>
+				</body>
+				<documentation>
+					<html xmlns="http://www.w3.org/1999/xhtml">
+						<div xml:space="preserve" id="MWTDESCRIPTION" wsName="MainT" xmlns="http://www.w3.org/1999/xhtml"/>
+					</html>
+				</documentation>
+			</pou>
+		</pous>
+	</types>
+	<instances>
+		<configurations/>
+	</instances>
+</project>

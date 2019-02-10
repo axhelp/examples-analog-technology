@@ -1,0 +1,1122 @@
+<project xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.kw-software.com/xml/PLCopen/TC6_XML_V10_KW.xsd">
+	<fileHeader companyName="Phoenix Contact" companyURL="https://www.phoenixcontact-software.com" productName="PC WORX" productVersion="6.30" productRelease="Build 500" creationDateTime="2019-02-10T19:33:58" contentDescription="###XMLINFO=2;1;"/>
+	<contentHeader name="IB-IL-AI-8-SF" version="1549816438" modificationDateTime="2019-02-10T19:33:58" connectionCheck="true">
+		<coordinateInfo>
+			<pageSize x="999" y="9999"/>
+			<fbd>
+				<scaling x="2" y="2"/>
+			</fbd>
+			<ld>
+				<scaling x="2" y="2"/>
+			</ld>
+			<sfc>
+				<scaling x="2" y="2"/>
+			</sfc>
+		</coordinateInfo>
+	</contentHeader>
+	<types>
+		<dataTypes/>
+		<pous>
+			<pou name="Main" pouType="program" lastChange="2014-07-30T13:00:05">
+				<interface>
+					<localVars retain="false">
+						<variable name="IL_AI_8_V2_15_1" group="Default">
+							<type>
+								<derived name="IL_AI_8_V2_15"/>
+							</type>
+						</variable>
+					</localVars>
+					<externalVars retain="false">
+						<variable name="dwAI8_DP_IN" group="Default">
+							<type>
+								<DWORD/>
+							</type>
+						</variable>
+						<variable name="dwAI8_PD_OUT" group="Default">
+							<type>
+								<DWORD/>
+							</type>
+						</variable>
+					</externalVars>
+					<localVars retain="false">
+						<variable name="adtAI8_Data" group="Default">
+							<type>
+								<derived name="ANL_ARR_IL_AI_8_Data"/>
+							</type>
+						</variable>
+						<variable name="udtAI8_Parameter" group="Default">
+							<type>
+								<derived name="ANL_ARR_IL_AI_8_Para"/>
+							</type>
+						</variable>
+						<variable name="rCurrent_Value_Ch1" group="Default">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="rCurrent_Value_Ch2" group="Default">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="rCurrent_Value_Ch3" group="Default">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="rCurrent_Value_Ch4" group="Default">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="rCurrent_Value_Ch5" group="Default">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="rCurrent_Value_Ch6" group="Default">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="rCurrent_Value_Ch7" group="Default">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="rCurrent_Value_Ch8" group="Default">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="xError_Ch1" group="Default">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xError_Ch2" group="Default">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xError_Ch3" group="Default">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xError_Ch4" group="Default">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xError_Ch5" group="Default">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xError_Ch6" group="Default">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xError_Ch7" group="Default">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xError_Ch8" group="Default">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+					</localVars>
+				</interface>
+				<body>
+					<FBD>
+						<worksheet name="Main" SizeX="400" SizeY="400">
+							<inVariable localId="0" width="8" height="2">
+								<position x="54" y="52"/>
+								<connectionPointOut>
+									<relPosition x="8" y="1"/>
+								</connectionPointOut>
+								<expression>TRUE</expression>
+							</inVariable>
+							<inVariable localId="1" width="14" height="2">
+								<position x="48" y="64"/>
+								<connectionPointOut>
+									<relPosition x="14" y="1"/>
+								</connectionPointOut>
+								<expression>dwAI8_DP_IN</expression>
+							</inVariable>
+							<outVariable localId="2" width="16" height="2">
+								<position x="97" y="76"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="19" formalParameter="dwOutputAddress"/>
+								</connectionPointIn>
+								<expression>dwAI8_PD_OUT</expression>
+							</outVariable>
+							<outVariable localId="3" width="13" height="2">
+								<position x="97" y="72"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="19" formalParameter="udtData"/>
+								</connectionPointIn>
+								<expression>adtAI8_Data</expression>
+							</outVariable>
+							<inVariable localId="4" width="21" height="2">
+								<position x="8" y="92"/>
+								<connectionPointOut>
+									<relPosition x="21" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[1].Value</expression>
+							</inVariable>
+							<inVariable localId="5" width="18" height="2">
+								<position x="44" y="60"/>
+								<connectionPointOut>
+									<relPosition x="18" y="1"/>
+								</connectionPointOut>
+								<expression>udtAI8_Parameter</expression>
+							</inVariable>
+							<outVariable localId="6" width="26" height="2">
+								<position x="16" y="15"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="20">
+										<position x="16" y="16" pathnode="false"/>
+										<position x="12" y="16" pathnode="false"/>
+										<position x="9" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[1].Range</expression>
+							</outVariable>
+							<block width="31" height="32" typeName="IL_AI_8_V2_15" instanceName="IL_AI_8_V2_15_1" localId="19">
+								<position x="64" y="49"/>
+								<inputVariables>
+									<variable formalParameter="xActivate" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="4"/>
+											<connection refLocalId="0"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="bSelect" dataType="BYTE" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="8"/>
+											<connection refLocalId="65"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="udtParameter" dataType="ANL_ARR_IL_AI_8_Para" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="12"/>
+											<connection refLocalId="5"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="dwInputAddress" dataType="DWORD" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="16"/>
+											<connection refLocalId="1"/>
+										</connectionPointIn>
+									</variable>
+								</inputVariables>
+								<inOutVariables/>
+								<outputVariables>
+									<variable formalParameter="xReady" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointOut>
+											<relPosition x="33" y="4"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="xError" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointOut>
+											<relPosition x="33" y="8"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="wDiagCode" dataType="WORD" hideable="true">
+										<connectionPointOut>
+											<relPosition x="33" y="12"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="wAddDiagCode" dataType="WORD" hideable="true">
+										<connectionPointOut>
+											<relPosition x="33" y="16"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="xSelectValid" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointOut>
+											<relPosition x="33" y="20"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="udtData" dataType="ANL_ARR_IL_AI_8_Data" hideable="true">
+										<connectionPointOut>
+											<relPosition x="33" y="24"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="dwOutputAddress" dataType="DWORD" hideable="true">
+										<connectionPointOut>
+											<relPosition x="33" y="28"/>
+										</connectionPointOut>
+									</variable>
+								</outputVariables>
+							</block>
+							<inVariable localId="20" width="5" height="2">
+								<position x="4" y="15"/>
+								<connectionPointOut>
+									<relPosition x="5" y="1"/>
+								</connectionPointOut>
+								<expression>10</expression>
+							</inVariable>
+							<outVariable localId="21" width="26" height="2">
+								<position x="16" y="18"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="20">
+										<position x="16" y="19" pathnode="false"/>
+										<position x="12" y="19" pathnode="false"/>
+										<position x="12" y="16" pathnode="false"/>
+										<position x="9" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[2].Range</expression>
+							</outVariable>
+							<outVariable localId="22" width="26" height="2">
+								<position x="16" y="21"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="20">
+										<position x="16" y="22" pathnode="false"/>
+										<position x="12" y="22" pathnode="false"/>
+										<position x="12" y="19" pathnode="false"/>
+										<position x="12" y="16" pathnode="false"/>
+										<position x="9" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[3].Range</expression>
+							</outVariable>
+							<outVariable localId="23" width="26" height="2">
+								<position x="16" y="24"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="20">
+										<position x="16" y="25" pathnode="false"/>
+										<position x="12" y="25" pathnode="false"/>
+										<position x="12" y="22" pathnode="false"/>
+										<position x="12" y="19" pathnode="false"/>
+										<position x="12" y="16" pathnode="false"/>
+										<position x="9" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[4].Range</expression>
+							</outVariable>
+							<outVariable localId="24" width="26" height="2">
+								<position x="16" y="27"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="20">
+										<position x="16" y="28" pathnode="false"/>
+										<position x="12" y="28" pathnode="false"/>
+										<position x="12" y="25" pathnode="false"/>
+										<position x="12" y="22" pathnode="false"/>
+										<position x="12" y="19" pathnode="false"/>
+										<position x="12" y="16" pathnode="false"/>
+										<position x="9" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[5].Range</expression>
+							</outVariable>
+							<outVariable localId="25" width="26" height="2">
+								<position x="16" y="30"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="20">
+										<position x="16" y="31" pathnode="false"/>
+										<position x="12" y="31" pathnode="false"/>
+										<position x="12" y="28" pathnode="false"/>
+										<position x="12" y="25" pathnode="false"/>
+										<position x="12" y="22" pathnode="false"/>
+										<position x="12" y="19" pathnode="false"/>
+										<position x="12" y="16" pathnode="false"/>
+										<position x="9" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[6].Range</expression>
+							</outVariable>
+							<outVariable localId="26" width="26" height="2">
+								<position x="16" y="33"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="20">
+										<position x="16" y="34" pathnode="false"/>
+										<position x="12" y="34" pathnode="false"/>
+										<position x="12" y="31" pathnode="false"/>
+										<position x="12" y="28" pathnode="false"/>
+										<position x="12" y="25" pathnode="false"/>
+										<position x="12" y="22" pathnode="false"/>
+										<position x="12" y="19" pathnode="false"/>
+										<position x="12" y="16" pathnode="false"/>
+										<position x="9" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[7].Range</expression>
+							</outVariable>
+							<outVariable localId="27" width="26" height="2">
+								<position x="16" y="36"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="20">
+										<position x="16" y="37" pathnode="false"/>
+										<position x="12" y="37" pathnode="false"/>
+										<position x="12" y="34" pathnode="false"/>
+										<position x="12" y="31" pathnode="false"/>
+										<position x="12" y="28" pathnode="false"/>
+										<position x="12" y="25" pathnode="false"/>
+										<position x="12" y="22" pathnode="false"/>
+										<position x="12" y="19" pathnode="false"/>
+										<position x="12" y="16" pathnode="false"/>
+										<position x="9" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[8].Range</expression>
+							</outVariable>
+							<outVariable localId="44" width="19" height="2">
+								<position x="32" y="92"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="4">
+										<position x="32" y="93" pathnode="false"/>
+										<position x="29" y="93" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>rCurrent_Value_Ch1</expression>
+							</outVariable>
+							<comment localId="46" width="30" height="3">
+								<position x="4" y="5"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#800000;background:#FFFFFF;font-weight:bold;font-style:normal;normal;font-family:Tahoma;width:0px; height:237px; font-size:14.25em" xmlns="http://www.w3.org/1999/xhtml">Параметризация каналов</p>
+									</html>
+								</content>
+							</comment>
+							<outVariable localId="47" width="26" height="2">
+								<position x="101" y="15"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="55">
+										<position x="101" y="16" pathnode="false"/>
+										<position x="99" y="16" pathnode="false"/>
+										<position x="97" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[1].LoLim</expression>
+							</outVariable>
+							<outVariable localId="48" width="26" height="2">
+								<position x="101" y="18"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="55">
+										<position x="101" y="19" pathnode="false"/>
+										<position x="99" y="19" pathnode="false"/>
+										<position x="99" y="16" pathnode="false"/>
+										<position x="97" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[2].LoLim</expression>
+							</outVariable>
+							<outVariable localId="49" width="26" height="2">
+								<position x="101" y="21"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="55">
+										<position x="101" y="22" pathnode="false"/>
+										<position x="99" y="22" pathnode="false"/>
+										<position x="99" y="19" pathnode="false"/>
+										<position x="99" y="16" pathnode="false"/>
+										<position x="97" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[3].LoLim</expression>
+							</outVariable>
+							<outVariable localId="50" width="26" height="2">
+								<position x="101" y="24"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="55">
+										<position x="101" y="25" pathnode="false"/>
+										<position x="99" y="25" pathnode="false"/>
+										<position x="99" y="22" pathnode="false"/>
+										<position x="99" y="19" pathnode="false"/>
+										<position x="99" y="16" pathnode="false"/>
+										<position x="97" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[4].LoLim</expression>
+							</outVariable>
+							<outVariable localId="51" width="26" height="2">
+								<position x="101" y="27"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="55">
+										<position x="101" y="28" pathnode="false"/>
+										<position x="99" y="28" pathnode="false"/>
+										<position x="99" y="25" pathnode="false"/>
+										<position x="99" y="22" pathnode="false"/>
+										<position x="99" y="19" pathnode="false"/>
+										<position x="99" y="16" pathnode="false"/>
+										<position x="97" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[5].LoLim</expression>
+							</outVariable>
+							<outVariable localId="52" width="26" height="2">
+								<position x="101" y="30"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="55">
+										<position x="101" y="31" pathnode="false"/>
+										<position x="99" y="31" pathnode="false"/>
+										<position x="99" y="28" pathnode="false"/>
+										<position x="99" y="25" pathnode="false"/>
+										<position x="99" y="22" pathnode="false"/>
+										<position x="99" y="19" pathnode="false"/>
+										<position x="99" y="16" pathnode="false"/>
+										<position x="97" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[6].LoLim</expression>
+							</outVariable>
+							<outVariable localId="53" width="26" height="2">
+								<position x="101" y="33"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="55">
+										<position x="101" y="34" pathnode="false"/>
+										<position x="99" y="34" pathnode="false"/>
+										<position x="99" y="31" pathnode="false"/>
+										<position x="99" y="28" pathnode="false"/>
+										<position x="99" y="25" pathnode="false"/>
+										<position x="99" y="22" pathnode="false"/>
+										<position x="99" y="19" pathnode="false"/>
+										<position x="99" y="16" pathnode="false"/>
+										<position x="97" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[7].LoLim</expression>
+							</outVariable>
+							<outVariable localId="54" width="26" height="2">
+								<position x="101" y="36"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="55">
+										<position x="101" y="37" pathnode="false"/>
+										<position x="99" y="37" pathnode="false"/>
+										<position x="99" y="34" pathnode="false"/>
+										<position x="99" y="31" pathnode="false"/>
+										<position x="99" y="28" pathnode="false"/>
+										<position x="99" y="25" pathnode="false"/>
+										<position x="99" y="22" pathnode="false"/>
+										<position x="99" y="19" pathnode="false"/>
+										<position x="99" y="16" pathnode="false"/>
+										<position x="97" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[8].LoLim</expression>
+							</outVariable>
+							<inVariable localId="55" width="6" height="2">
+								<position x="91" y="15"/>
+								<connectionPointOut>
+									<relPosition x="6" y="1"/>
+								</connectionPointOut>
+								<expression>0.0</expression>
+							</inVariable>
+							<outVariable localId="56" width="25" height="2">
+								<position x="147" y="15"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="64">
+										<position x="147" y="16" pathnode="false"/>
+										<position x="145" y="16" pathnode="false"/>
+										<position x="143" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[1].HiLim</expression>
+							</outVariable>
+							<outVariable localId="57" width="25" height="2">
+								<position x="147" y="18"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="64">
+										<position x="147" y="19" pathnode="false"/>
+										<position x="145" y="19" pathnode="false"/>
+										<position x="145" y="16" pathnode="false"/>
+										<position x="143" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[2].HiLim</expression>
+							</outVariable>
+							<outVariable localId="58" width="25" height="2">
+								<position x="147" y="21"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="64">
+										<position x="147" y="22" pathnode="false"/>
+										<position x="145" y="22" pathnode="false"/>
+										<position x="145" y="19" pathnode="false"/>
+										<position x="145" y="16" pathnode="false"/>
+										<position x="143" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[3].HiLim</expression>
+							</outVariable>
+							<outVariable localId="59" width="25" height="2">
+								<position x="147" y="24"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="64">
+										<position x="147" y="25" pathnode="false"/>
+										<position x="145" y="25" pathnode="false"/>
+										<position x="145" y="22" pathnode="false"/>
+										<position x="145" y="19" pathnode="false"/>
+										<position x="145" y="16" pathnode="false"/>
+										<position x="143" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[4].HiLim</expression>
+							</outVariable>
+							<outVariable localId="60" width="25" height="2">
+								<position x="147" y="27"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="64">
+										<position x="147" y="28" pathnode="false"/>
+										<position x="145" y="28" pathnode="false"/>
+										<position x="145" y="25" pathnode="false"/>
+										<position x="145" y="22" pathnode="false"/>
+										<position x="145" y="19" pathnode="false"/>
+										<position x="145" y="16" pathnode="false"/>
+										<position x="143" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[5].HiLim</expression>
+							</outVariable>
+							<outVariable localId="61" width="25" height="2">
+								<position x="147" y="30"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="64">
+										<position x="147" y="31" pathnode="false"/>
+										<position x="145" y="31" pathnode="false"/>
+										<position x="145" y="28" pathnode="false"/>
+										<position x="145" y="25" pathnode="false"/>
+										<position x="145" y="22" pathnode="false"/>
+										<position x="145" y="19" pathnode="false"/>
+										<position x="145" y="16" pathnode="false"/>
+										<position x="143" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[6].HiLim</expression>
+							</outVariable>
+							<outVariable localId="62" width="25" height="2">
+								<position x="147" y="33"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="64">
+										<position x="147" y="34" pathnode="false"/>
+										<position x="145" y="34" pathnode="false"/>
+										<position x="145" y="31" pathnode="false"/>
+										<position x="145" y="28" pathnode="false"/>
+										<position x="145" y="25" pathnode="false"/>
+										<position x="145" y="22" pathnode="false"/>
+										<position x="145" y="19" pathnode="false"/>
+										<position x="145" y="16" pathnode="false"/>
+										<position x="143" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[7].HiLim</expression>
+							</outVariable>
+							<outVariable localId="63" width="25" height="2">
+								<position x="147" y="36"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="64">
+										<position x="147" y="37" pathnode="false"/>
+										<position x="145" y="37" pathnode="false"/>
+										<position x="145" y="34" pathnode="false"/>
+										<position x="145" y="31" pathnode="false"/>
+										<position x="145" y="28" pathnode="false"/>
+										<position x="145" y="25" pathnode="false"/>
+										<position x="145" y="22" pathnode="false"/>
+										<position x="145" y="19" pathnode="false"/>
+										<position x="145" y="16" pathnode="false"/>
+										<position x="143" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[8].HiLim</expression>
+							</outVariable>
+							<inVariable localId="64" width="8" height="2">
+								<position x="135" y="15"/>
+								<connectionPointOut>
+									<relPosition x="8" y="1"/>
+								</connectionPointOut>
+								<expression>100.0</expression>
+							</inVariable>
+							<inVariable localId="65" width="20" height="2">
+								<position x="42" y="56"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>BYTE#2#1111_1111</expression>
+							</inVariable>
+							<comment localId="66" width="22" height="3">
+								<position x="13" y="56"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">Все каналы активны</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="68" width="21" height="2">
+								<position x="8" y="96"/>
+								<connectionPointOut>
+									<relPosition x="21" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[2].Value</expression>
+							</inVariable>
+							<outVariable localId="69" width="19" height="2">
+								<position x="32" y="96"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="68">
+										<position x="32" y="97" pathnode="false"/>
+										<position x="29" y="97" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>rCurrent_Value_Ch2</expression>
+							</outVariable>
+							<inVariable localId="72" width="21" height="2">
+								<position x="8" y="100"/>
+								<connectionPointOut>
+									<relPosition x="21" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[3].Value</expression>
+							</inVariable>
+							<outVariable localId="73" width="19" height="2">
+								<position x="32" y="100"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="72">
+										<position x="32" y="101" pathnode="false"/>
+										<position x="29" y="101" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>rCurrent_Value_Ch3</expression>
+							</outVariable>
+							<inVariable localId="74" width="21" height="2">
+								<position x="8" y="104"/>
+								<connectionPointOut>
+									<relPosition x="21" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[4].Value</expression>
+							</inVariable>
+							<outVariable localId="75" width="19" height="2">
+								<position x="32" y="104"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="74">
+										<position x="32" y="105" pathnode="false"/>
+										<position x="29" y="105" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>rCurrent_Value_Ch4</expression>
+							</outVariable>
+							<inVariable localId="80" width="21" height="2">
+								<position x="8" y="108"/>
+								<connectionPointOut>
+									<relPosition x="21" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[5].Value</expression>
+							</inVariable>
+							<outVariable localId="81" width="19" height="2">
+								<position x="32" y="108"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="80">
+										<position x="32" y="109" pathnode="false"/>
+										<position x="29" y="109" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>rCurrent_Value_Ch5</expression>
+							</outVariable>
+							<inVariable localId="82" width="21" height="2">
+								<position x="8" y="112"/>
+								<connectionPointOut>
+									<relPosition x="21" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[6].Value</expression>
+							</inVariable>
+							<outVariable localId="83" width="19" height="2">
+								<position x="32" y="112"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="82">
+										<position x="32" y="113" pathnode="false"/>
+										<position x="29" y="113" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>rCurrent_Value_Ch6</expression>
+							</outVariable>
+							<inVariable localId="84" width="21" height="2">
+								<position x="8" y="116"/>
+								<connectionPointOut>
+									<relPosition x="21" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[7].Value</expression>
+							</inVariable>
+							<outVariable localId="85" width="19" height="2">
+								<position x="32" y="116"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="84">
+										<position x="32" y="117" pathnode="false"/>
+										<position x="29" y="117" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>rCurrent_Value_Ch7</expression>
+							</outVariable>
+							<inVariable localId="86" width="21" height="2">
+								<position x="8" y="120"/>
+								<connectionPointOut>
+									<relPosition x="21" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[8].Value</expression>
+							</inVariable>
+							<outVariable localId="87" width="19" height="2">
+								<position x="32" y="120"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="86">
+										<position x="32" y="121" pathnode="false"/>
+										<position x="29" y="121" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>rCurrent_Value_Ch8</expression>
+							</outVariable>
+							<comment localId="88" width="68" height="3">
+								<position x="4" y="44"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#800000;background:#FFFFFF;font-weight:bold;font-style:normal;normal;font-family:Tahoma;width:0px; height:237px; font-size:14.25em" xmlns="http://www.w3.org/1999/xhtml">Передача модулю параметров и получение данных от модуля</p>
+									</html>
+								</content>
+							</comment>
+							<comment localId="89" width="35" height="3">
+								<position x="4" y="88"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#800000;background:#FFFFFF;font-weight:bold;font-style:normal;normal;font-family:Tahoma;width:0px; height:237px; font-size:14.25em" xmlns="http://www.w3.org/1999/xhtml">Вывод значений и диагностика</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="90" width="20" height="2">
+								<position x="58" y="92"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[1].Error</expression>
+							</inVariable>
+							<inVariable localId="91" width="20" height="2">
+								<position x="58" y="96"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[2].Error</expression>
+							</inVariable>
+							<inVariable localId="92" width="20" height="2">
+								<position x="58" y="100"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[3].Error</expression>
+							</inVariable>
+							<inVariable localId="93" width="20" height="2">
+								<position x="58" y="104"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[4].Error</expression>
+							</inVariable>
+							<inVariable localId="94" width="20" height="2">
+								<position x="58" y="108"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[5].Error</expression>
+							</inVariable>
+							<inVariable localId="95" width="20" height="2">
+								<position x="58" y="112"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[6].Error</expression>
+							</inVariable>
+							<inVariable localId="96" width="20" height="2">
+								<position x="58" y="116"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[7].Error</expression>
+							</inVariable>
+							<inVariable localId="97" width="20" height="2">
+								<position x="58" y="120"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[8].Error</expression>
+							</inVariable>
+							<outVariable localId="98" width="12" height="2">
+								<position x="84" y="92"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="90">
+										<position x="84" y="93" pathnode="false"/>
+										<position x="78" y="93" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>xError_Ch1</expression>
+							</outVariable>
+							<outVariable localId="99" width="12" height="2">
+								<position x="84" y="96"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="91">
+										<position x="84" y="97" pathnode="false"/>
+										<position x="78" y="97" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>xError_Ch2</expression>
+							</outVariable>
+							<outVariable localId="100" width="12" height="2">
+								<position x="84" y="100"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="92">
+										<position x="84" y="101" pathnode="false"/>
+										<position x="78" y="101" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>xError_Ch3</expression>
+							</outVariable>
+							<outVariable localId="101" width="12" height="2">
+								<position x="84" y="104"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="93">
+										<position x="84" y="105" pathnode="false"/>
+										<position x="78" y="105" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>xError_Ch4</expression>
+							</outVariable>
+							<outVariable localId="102" width="12" height="2">
+								<position x="84" y="108"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="94">
+										<position x="84" y="109" pathnode="false"/>
+										<position x="78" y="109" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>xError_Ch5</expression>
+							</outVariable>
+							<outVariable localId="103" width="12" height="2">
+								<position x="84" y="112"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="95">
+										<position x="84" y="113" pathnode="false"/>
+										<position x="78" y="113" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>xError_Ch6</expression>
+							</outVariable>
+							<outVariable localId="104" width="12" height="2">
+								<position x="84" y="116"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="96">
+										<position x="84" y="117" pathnode="false"/>
+										<position x="78" y="117" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>xError_Ch7</expression>
+							</outVariable>
+							<outVariable localId="105" width="12" height="2">
+								<position x="84" y="120"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="97">
+										<position x="84" y="121" pathnode="false"/>
+										<position x="78" y="121" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>xError_Ch8</expression>
+							</outVariable>
+							<comment localId="114" width="22" height="3">
+								<position x="4" y="10"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">10 - 4 mA ... 20 mA</p>
+									</html>
+								</content>
+							</comment>
+							<comment localId="115" width="28" height="3">
+								<position x="49" y="10"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">Нормализация от 0 до 100</p>
+									</html>
+								</content>
+							</comment>
+							<outVariable localId="116" width="33" height="2">
+								<position x="56" y="15"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="156">
+										<position x="56" y="16" pathnode="false"/>
+										<position x="54" y="16" pathnode="false"/>
+										<position x="53" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[1].Standardization</expression>
+							</outVariable>
+							<outVariable localId="133" width="33" height="2">
+								<position x="56" y="18"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="156">
+										<position x="56" y="19" pathnode="false"/>
+										<position x="54" y="19" pathnode="false"/>
+										<position x="54" y="16" pathnode="false"/>
+										<position x="53" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[2].Standardization</expression>
+							</outVariable>
+							<outVariable localId="134" width="33" height="2">
+								<position x="56" y="21"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="156">
+										<position x="56" y="22" pathnode="false"/>
+										<position x="54" y="22" pathnode="false"/>
+										<position x="54" y="19" pathnode="false"/>
+										<position x="54" y="16" pathnode="false"/>
+										<position x="53" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[3].Standardization</expression>
+							</outVariable>
+							<outVariable localId="135" width="33" height="2">
+								<position x="56" y="24"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="156">
+										<position x="56" y="25" pathnode="false"/>
+										<position x="54" y="25" pathnode="false"/>
+										<position x="54" y="22" pathnode="false"/>
+										<position x="54" y="19" pathnode="false"/>
+										<position x="54" y="16" pathnode="false"/>
+										<position x="53" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[4].Standardization</expression>
+							</outVariable>
+							<outVariable localId="136" width="33" height="2">
+								<position x="56" y="27"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="156">
+										<position x="56" y="28" pathnode="false"/>
+										<position x="54" y="28" pathnode="false"/>
+										<position x="54" y="25" pathnode="false"/>
+										<position x="54" y="22" pathnode="false"/>
+										<position x="54" y="19" pathnode="false"/>
+										<position x="54" y="16" pathnode="false"/>
+										<position x="53" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[5].Standardization</expression>
+							</outVariable>
+							<outVariable localId="137" width="33" height="2">
+								<position x="56" y="30"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="156">
+										<position x="56" y="31" pathnode="false"/>
+										<position x="54" y="31" pathnode="false"/>
+										<position x="54" y="28" pathnode="false"/>
+										<position x="54" y="25" pathnode="false"/>
+										<position x="54" y="22" pathnode="false"/>
+										<position x="54" y="19" pathnode="false"/>
+										<position x="54" y="16" pathnode="false"/>
+										<position x="53" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[6].Standardization</expression>
+							</outVariable>
+							<outVariable localId="154" width="33" height="2">
+								<position x="56" y="33"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="156">
+										<position x="56" y="34" pathnode="false"/>
+										<position x="54" y="34" pathnode="false"/>
+										<position x="54" y="31" pathnode="false"/>
+										<position x="54" y="28" pathnode="false"/>
+										<position x="54" y="25" pathnode="false"/>
+										<position x="54" y="22" pathnode="false"/>
+										<position x="54" y="19" pathnode="false"/>
+										<position x="54" y="16" pathnode="false"/>
+										<position x="53" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[7].Standardization</expression>
+							</outVariable>
+							<outVariable localId="155" width="33" height="2">
+								<position x="56" y="36"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="156">
+										<position x="56" y="37" pathnode="false"/>
+										<position x="54" y="37" pathnode="false"/>
+										<position x="54" y="34" pathnode="false"/>
+										<position x="54" y="31" pathnode="false"/>
+										<position x="54" y="28" pathnode="false"/>
+										<position x="54" y="25" pathnode="false"/>
+										<position x="54" y="22" pathnode="false"/>
+										<position x="54" y="19" pathnode="false"/>
+										<position x="54" y="16" pathnode="false"/>
+										<position x="53" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[8].Standardization</expression>
+							</outVariable>
+							<inVariable localId="156" width="8" height="2">
+								<position x="45" y="15"/>
+								<connectionPointOut>
+									<relPosition x="8" y="1"/>
+								</connectionPointOut>
+								<expression>TRUE</expression>
+							</inVariable>
+						</worksheet>
+					</FBD>
+				</body>
+				<documentation>
+					<html xmlns="http://www.w3.org/1999/xhtml">
+						<div xml:space="preserve" id="MWTDESCRIPTION" wsName="MainT" xmlns="http://www.w3.org/1999/xhtml"/>
+					</html>
+				</documentation>
+			</pou>
+		</pous>
+	</types>
+	<instances>
+		<configurations/>
+	</instances>
+</project>

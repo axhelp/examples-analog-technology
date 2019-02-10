@@ -1,0 +1,2068 @@
+<project xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.kw-software.com/xml/PLCopen/TC6_XML_V10_KW.xsd">
+	<fileHeader companyName="Phoenix Contact" companyURL="https://www.phoenixcontact-software.com" productName="PC WORX" productVersion="6.30" productRelease="Build 500" creationDateTime="2019-02-10T19:33:57" contentDescription="###XMLINFO=2;1;"/>
+	<contentHeader name="IB-IL-AI-8-SF" version="1549816437" modificationDateTime="2019-02-10T19:33:57" connectionCheck="true">
+		<coordinateInfo>
+			<pageSize x="999" y="9999"/>
+			<fbd>
+				<scaling x="2" y="2"/>
+			</fbd>
+			<ld>
+				<scaling x="2" y="2"/>
+			</ld>
+			<sfc>
+				<scaling x="2" y="2"/>
+			</sfc>
+		</coordinateInfo>
+	</contentHeader>
+	<libraries>
+		<library name="AnalogTechnology_6" firmware="false" path="D:\dev\examples-analog-technology\PC WORX\bin\libraries\AnalogTechnology_6\AnalogTechnology_6.mwt"/>
+	</libraries>
+	<types>
+		<dataTypes>
+			<datatypeWorksheet>
+				<html xmlns="http://www.w3.org/1999/xhtml">
+					<div xml:space="preserve" id="MWTDESCRIPTION" wsName="sys_flag_types" xmlns="http://www.w3.org/1999/xhtml">TYPE<br/>      Task_Name_Typ : ARRAY[0..9] OF BYTE;<br/>
+						<br/>      Extended_Task_Info   : STRUCT<br/>      TaskName          : Task_Name_Typ;  (* Name of the Task as ARRAY OF BYTE, NULL terminated *) <br/>      TaskPrio          : INT;            (* Priority of the task *)<br/>      undocumented_0    : INT;<br/>      TaskPeriod        : INT;            (* Period of the task in milliseconds *)<br/>      TaskStack         : INT;            (* Stack size of the task *)<br/>      unused_1          : INT;<br/>      TaskWatchdog      : INT;            (* Watchdog time in milliseconds *)<br/>      undocumented_2    : INT;<br/>      undocumented_3    : INT;<br/>      undocumented_4    : INT;<br/>      CurDuration       : INT;            (* Current task duration in ticks including preemption *)<br/>      MinDuration       : INT;            (* Minimum task duration in ticks including preemption *)<br/>      MaxDuration       : INT;            (* Maximum task duration in ticks including preemption *)<br/>      undocumented_5    : INT;<br/>      CurDelay          : INT;            (* Current task delay in ticks including preemption *)<br/>      MinDelay          : INT;            (* Minimum task delay in ticks including preemption *)<br/>      MaxDelay          : INT;            (* Maximum task delay in ticks including preemption *)<br/>   END_STRUCT;<br/>END_TYPE<br/>
+						<br/>TYPE<br/>	Task_Name_eCLR : ARRAY[0..35] OF BYTE;<br/>	<br/>	Task_Info_eCLR : STRUCT<br/>	TaskStack            : INT;            (* Stack size of the task *)<br/>	TaskPrio             : INT;            (* Priority of the task *)<br/>	TaskPeriod_us        : DINT;           (* Period of the task in microseconds *)<br/>	TaskWatchdog_us      : DINT;           (* Watchdog time in microseconds *)<br/>	TaskPeriod           : INT;            (* Period of the task in milliseconds *)<br/>	TaskWatchdog         : INT;            (* Watchdog time in milliseconds *)<br/>	MinDuration_us       : DINT;           (* Minimum task duration in microseconds including preemption *)<br/>	MaxDuration_us       : DINT;           (* Maximum task duration in microseconds including preemption *)<br/>	CurDuration_us       : DINT;           (* Current task duration in microseconds including preemption *)<br/>	MinDelay_us          : DINT;           (* Minimum task delay in microseconds including preemption *)<br/>	MaxDelay_us          : DINT;           (* Maximum task delay in microseconds including preemption *)<br/>	CurDelay_us          : DINT;           (* Current task delay in microseconds including preemption *)<br/>	MinDuration          : INT;            (* Minimum task duration in milliseconds including preemption *)<br/>	MaxDuration          : INT;            (* Maximum task duration in milliseconds including preemption *)<br/>	CurDuration          : INT;            (* Current task duration in milliseconds including preemption *)<br/>	MinDelay             : INT;            (* Minimum task delay in milliseconds including preemption *)<br/>	MaxDelay             : INT;            (* Maximum task delay in milliseconds including preemption *)<br/>	CurDelay             : INT;            (* Current task delay in milliseconds including preemption *)<br/>	unused_1             : DINT;<br/>	unused_2             : DINT;<br/>	unused_3             : DINT;<br/>	unused_4             : DINT;<br/>	unused_5             : DINT;<br/>	unused_6             : DINT;<br/>	unused_7             : DINT;<br/>	unused_8             : DINT;<br/>	unused_9             : DINT;<br/>	TNameMaxSize         : INT;<br/>	TNameSize            : INT;<br/>	TaskName             : Task_Name_eCLR;<br/>	END_STRUCT;<br/>END_TYPE<br/> <br/>TYPE<br/>	PND_IO_32  : ARRAY[0..31]  OF BYTE;<br/>	PND_IO_64  : ARRAY[0..63]  OF BYTE;<br/>	PND_IO_128 : ARRAY[0..127] OF BYTE;<br/>	PND_IO_256 : ARRAY[0..255] OF BYTE;<br/>	PND_IO_512 : ARRAY[0..511] OF BYTE;<br/>END_TYPE<br/>
+						<br/>TYPE<br/>	Redundancy_OPC_Struct : ARRAY[0..2] OF INT;<br/>END_TYPE<br/>
+						<br/>TYPE<br/>    MBT_STATION_DIAG : STRUCT<br/>    Status           : DWORD; (* Bit 0 = Station is online  *)<br/>                              (* Bit 1 = Exception exits *)<br/>    Handle           : DWORD;<br/>    OfflineCounter   : DWORD; (* Incremented by every shutdown of this station. *)<br/>
+						<br/>    NetCycleAvg      : DWORD; (* ms. NetInCycleAvg + NetOutCycleAvg *)<br/>    NetCycleMin      : DWORD; (* ms. *)<br/>    NetCycleMax      : DWORD; (* ms. *)<br/>
+						<br/>    NetInCycleAvg    : DWORD; (* ms. *)<br/>    NetInCycleMin    : DWORD; (* ms. *)<br/>    NetInCycleMax    : DWORD; (* ms. *)<br/>
+						<br/>    NetOutCycleAvg   : DWORD; (* ms. *)<br/>    NetOutCycleMin   : DWORD; (* ms. *)<br/>    NetOutCycleMax   : DWORD; (* ms. *)<br/>
+						<br/>    InternalError1   : DWORD; (* For internal use of Phoenix Contact! *)<br/>    InternalError2   : DWORD; (* For internal use of Phoenix Contact! *)<br/>
+						<br/>    ExceptionCounter : DWORD; (* Incremented by every Modbus exception received on this station. *)<br/>    DiagReserved1    : BYTE;  (* Reserved for a later use! *)<br/>    DiagReserved2    : BYTE;  (* Reserved for a later use! *)<br/>    StationNumber    : BYTE;  (* Modbus Station Number *)<br/>    DiagReserved3    : BYTE;  (* Reserved for a later use! *)<br/>    END_STRUCT;<br/>
+						<br/>    MBT_STATION_CONTROL : STRUCT<br/>    ctrlStatistics   : BYTE;  (* Bit 0 = Clear  statistics *)<br/>    ControlReserved1 : BYTE;  (* Reserved for a later use! *)<br/>    ControlReserved2 : WORD;  (* Reserved for a later use! *)<br/>    ControlReserved3 : DWORD; (* Reserved for a later use! *)<br/>    END_STRUCT;<br/>END_TYPE<br/>
+					</div>
+				</html>
+			</datatypeWorksheet>
+		</dataTypes>
+		<pous>
+			<pou name="Main" pouType="program" lastChange="2014-07-30T13:00:05">
+				<interface>
+					<localVars retain="false">
+						<variable name="IL_AI_8_V2_15_1" group="Default">
+							<type>
+								<derived name="IL_AI_8_V2_15"/>
+							</type>
+						</variable>
+					</localVars>
+					<externalVars retain="false">
+						<variable name="dwAI8_DP_IN" group="Default">
+							<type>
+								<DWORD/>
+							</type>
+						</variable>
+						<variable name="dwAI8_PD_OUT" group="Default">
+							<type>
+								<DWORD/>
+							</type>
+						</variable>
+					</externalVars>
+					<localVars retain="false">
+						<variable name="adtAI8_Data" group="Default">
+							<type>
+								<derived name="ANL_ARR_IL_AI_8_Data"/>
+							</type>
+						</variable>
+						<variable name="udtAI8_Parameter" group="Default">
+							<type>
+								<derived name="ANL_ARR_IL_AI_8_Para"/>
+							</type>
+						</variable>
+						<variable name="rCurrent_Value_Ch1" group="Default">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="rCurrent_Value_Ch2" group="Default">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="rCurrent_Value_Ch3" group="Default">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="rCurrent_Value_Ch4" group="Default">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="rCurrent_Value_Ch5" group="Default">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="rCurrent_Value_Ch6" group="Default">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="rCurrent_Value_Ch7" group="Default">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="rCurrent_Value_Ch8" group="Default">
+							<type>
+								<REAL/>
+							</type>
+						</variable>
+						<variable name="xError_Ch1" group="Default">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xError_Ch2" group="Default">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xError_Ch3" group="Default">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xError_Ch4" group="Default">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xError_Ch5" group="Default">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xError_Ch6" group="Default">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xError_Ch7" group="Default">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+						<variable name="xError_Ch8" group="Default">
+							<type>
+								<BOOL/>
+							</type>
+						</variable>
+					</localVars>
+				</interface>
+				<body>
+					<FBD>
+						<worksheet name="Main" SizeX="400" SizeY="400">
+							<inVariable localId="0" width="8" height="2">
+								<position x="54" y="52"/>
+								<connectionPointOut>
+									<relPosition x="8" y="1"/>
+								</connectionPointOut>
+								<expression>TRUE</expression>
+							</inVariable>
+							<inVariable localId="1" width="14" height="2">
+								<position x="48" y="64"/>
+								<connectionPointOut>
+									<relPosition x="14" y="1"/>
+								</connectionPointOut>
+								<expression>dwAI8_DP_IN</expression>
+							</inVariable>
+							<outVariable localId="2" width="16" height="2">
+								<position x="97" y="76"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="19" formalParameter="dwOutputAddress"/>
+								</connectionPointIn>
+								<expression>dwAI8_PD_OUT</expression>
+							</outVariable>
+							<outVariable localId="3" width="13" height="2">
+								<position x="97" y="72"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="19" formalParameter="udtData"/>
+								</connectionPointIn>
+								<expression>adtAI8_Data</expression>
+							</outVariable>
+							<inVariable localId="4" width="21" height="2">
+								<position x="8" y="92"/>
+								<connectionPointOut>
+									<relPosition x="21" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[1].Value</expression>
+							</inVariable>
+							<inVariable localId="5" width="18" height="2">
+								<position x="44" y="60"/>
+								<connectionPointOut>
+									<relPosition x="18" y="1"/>
+								</connectionPointOut>
+								<expression>udtAI8_Parameter</expression>
+							</inVariable>
+							<outVariable localId="6" width="26" height="2">
+								<position x="16" y="15"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="20">
+										<position x="16" y="16" pathnode="false"/>
+										<position x="12" y="16" pathnode="false"/>
+										<position x="9" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[1].Range</expression>
+							</outVariable>
+							<block width="31" height="32" typeName="IL_AI_8_V2_15" instanceName="IL_AI_8_V2_15_1" localId="19">
+								<position x="64" y="49"/>
+								<inputVariables>
+									<variable formalParameter="xActivate" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="4"/>
+											<connection refLocalId="0"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="bSelect" dataType="BYTE" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="8"/>
+											<connection refLocalId="65"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="udtParameter" dataType="ANL_ARR_IL_AI_8_Para" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="12"/>
+											<connection refLocalId="5"/>
+										</connectionPointIn>
+									</variable>
+									<variable formalParameter="dwInputAddress" dataType="DWORD" hideable="true">
+										<connectionPointIn>
+											<relPosition x="-2" y="16"/>
+											<connection refLocalId="1"/>
+										</connectionPointIn>
+									</variable>
+								</inputVariables>
+								<inOutVariables/>
+								<outputVariables>
+									<variable formalParameter="xReady" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointOut>
+											<relPosition x="33" y="4"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="xError" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointOut>
+											<relPosition x="33" y="8"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="wDiagCode" dataType="WORD" hideable="true">
+										<connectionPointOut>
+											<relPosition x="33" y="12"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="wAddDiagCode" dataType="WORD" hideable="true">
+										<connectionPointOut>
+											<relPosition x="33" y="16"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="xSelectValid" dataType="BOOL" invertable="true" hideable="true">
+										<connectionPointOut>
+											<relPosition x="33" y="20"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="udtData" dataType="ANL_ARR_IL_AI_8_Data" hideable="true">
+										<connectionPointOut>
+											<relPosition x="33" y="24"/>
+										</connectionPointOut>
+									</variable>
+									<variable formalParameter="dwOutputAddress" dataType="DWORD" hideable="true">
+										<connectionPointOut>
+											<relPosition x="33" y="28"/>
+										</connectionPointOut>
+									</variable>
+								</outputVariables>
+							</block>
+							<inVariable localId="20" width="5" height="2">
+								<position x="4" y="15"/>
+								<connectionPointOut>
+									<relPosition x="5" y="1"/>
+								</connectionPointOut>
+								<expression>10</expression>
+							</inVariable>
+							<outVariable localId="21" width="26" height="2">
+								<position x="16" y="18"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="20">
+										<position x="16" y="19" pathnode="false"/>
+										<position x="12" y="19" pathnode="false"/>
+										<position x="12" y="16" pathnode="false"/>
+										<position x="9" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[2].Range</expression>
+							</outVariable>
+							<outVariable localId="22" width="26" height="2">
+								<position x="16" y="21"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="20">
+										<position x="16" y="22" pathnode="false"/>
+										<position x="12" y="22" pathnode="false"/>
+										<position x="12" y="19" pathnode="false"/>
+										<position x="12" y="16" pathnode="false"/>
+										<position x="9" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[3].Range</expression>
+							</outVariable>
+							<outVariable localId="23" width="26" height="2">
+								<position x="16" y="24"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="20">
+										<position x="16" y="25" pathnode="false"/>
+										<position x="12" y="25" pathnode="false"/>
+										<position x="12" y="22" pathnode="false"/>
+										<position x="12" y="19" pathnode="false"/>
+										<position x="12" y="16" pathnode="false"/>
+										<position x="9" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[4].Range</expression>
+							</outVariable>
+							<outVariable localId="24" width="26" height="2">
+								<position x="16" y="27"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="20">
+										<position x="16" y="28" pathnode="false"/>
+										<position x="12" y="28" pathnode="false"/>
+										<position x="12" y="25" pathnode="false"/>
+										<position x="12" y="22" pathnode="false"/>
+										<position x="12" y="19" pathnode="false"/>
+										<position x="12" y="16" pathnode="false"/>
+										<position x="9" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[5].Range</expression>
+							</outVariable>
+							<outVariable localId="25" width="26" height="2">
+								<position x="16" y="30"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="20">
+										<position x="16" y="31" pathnode="false"/>
+										<position x="12" y="31" pathnode="false"/>
+										<position x="12" y="28" pathnode="false"/>
+										<position x="12" y="25" pathnode="false"/>
+										<position x="12" y="22" pathnode="false"/>
+										<position x="12" y="19" pathnode="false"/>
+										<position x="12" y="16" pathnode="false"/>
+										<position x="9" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[6].Range</expression>
+							</outVariable>
+							<outVariable localId="26" width="26" height="2">
+								<position x="16" y="33"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="20">
+										<position x="16" y="34" pathnode="false"/>
+										<position x="12" y="34" pathnode="false"/>
+										<position x="12" y="31" pathnode="false"/>
+										<position x="12" y="28" pathnode="false"/>
+										<position x="12" y="25" pathnode="false"/>
+										<position x="12" y="22" pathnode="false"/>
+										<position x="12" y="19" pathnode="false"/>
+										<position x="12" y="16" pathnode="false"/>
+										<position x="9" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[7].Range</expression>
+							</outVariable>
+							<outVariable localId="27" width="26" height="2">
+								<position x="16" y="36"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="20">
+										<position x="16" y="37" pathnode="false"/>
+										<position x="12" y="37" pathnode="false"/>
+										<position x="12" y="34" pathnode="false"/>
+										<position x="12" y="31" pathnode="false"/>
+										<position x="12" y="28" pathnode="false"/>
+										<position x="12" y="25" pathnode="false"/>
+										<position x="12" y="22" pathnode="false"/>
+										<position x="12" y="19" pathnode="false"/>
+										<position x="12" y="16" pathnode="false"/>
+										<position x="9" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[8].Range</expression>
+							</outVariable>
+							<outVariable localId="44" width="19" height="2">
+								<position x="32" y="92"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="4">
+										<position x="32" y="93" pathnode="false"/>
+										<position x="29" y="93" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>rCurrent_Value_Ch1</expression>
+							</outVariable>
+							<comment localId="46" width="30" height="3">
+								<position x="4" y="5"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#800000;background:#FFFFFF;font-weight:bold;font-style:normal;normal;font-family:Tahoma;width:0px; height:237px; font-size:14.25em" xmlns="http://www.w3.org/1999/xhtml">Параметризация каналов</p>
+									</html>
+								</content>
+							</comment>
+							<outVariable localId="47" width="26" height="2">
+								<position x="101" y="15"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="55">
+										<position x="101" y="16" pathnode="false"/>
+										<position x="99" y="16" pathnode="false"/>
+										<position x="97" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[1].LoLim</expression>
+							</outVariable>
+							<outVariable localId="48" width="26" height="2">
+								<position x="101" y="18"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="55">
+										<position x="101" y="19" pathnode="false"/>
+										<position x="99" y="19" pathnode="false"/>
+										<position x="99" y="16" pathnode="false"/>
+										<position x="97" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[2].LoLim</expression>
+							</outVariable>
+							<outVariable localId="49" width="26" height="2">
+								<position x="101" y="21"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="55">
+										<position x="101" y="22" pathnode="false"/>
+										<position x="99" y="22" pathnode="false"/>
+										<position x="99" y="19" pathnode="false"/>
+										<position x="99" y="16" pathnode="false"/>
+										<position x="97" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[3].LoLim</expression>
+							</outVariable>
+							<outVariable localId="50" width="26" height="2">
+								<position x="101" y="24"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="55">
+										<position x="101" y="25" pathnode="false"/>
+										<position x="99" y="25" pathnode="false"/>
+										<position x="99" y="22" pathnode="false"/>
+										<position x="99" y="19" pathnode="false"/>
+										<position x="99" y="16" pathnode="false"/>
+										<position x="97" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[4].LoLim</expression>
+							</outVariable>
+							<outVariable localId="51" width="26" height="2">
+								<position x="101" y="27"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="55">
+										<position x="101" y="28" pathnode="false"/>
+										<position x="99" y="28" pathnode="false"/>
+										<position x="99" y="25" pathnode="false"/>
+										<position x="99" y="22" pathnode="false"/>
+										<position x="99" y="19" pathnode="false"/>
+										<position x="99" y="16" pathnode="false"/>
+										<position x="97" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[5].LoLim</expression>
+							</outVariable>
+							<outVariable localId="52" width="26" height="2">
+								<position x="101" y="30"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="55">
+										<position x="101" y="31" pathnode="false"/>
+										<position x="99" y="31" pathnode="false"/>
+										<position x="99" y="28" pathnode="false"/>
+										<position x="99" y="25" pathnode="false"/>
+										<position x="99" y="22" pathnode="false"/>
+										<position x="99" y="19" pathnode="false"/>
+										<position x="99" y="16" pathnode="false"/>
+										<position x="97" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[6].LoLim</expression>
+							</outVariable>
+							<outVariable localId="53" width="26" height="2">
+								<position x="101" y="33"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="55">
+										<position x="101" y="34" pathnode="false"/>
+										<position x="99" y="34" pathnode="false"/>
+										<position x="99" y="31" pathnode="false"/>
+										<position x="99" y="28" pathnode="false"/>
+										<position x="99" y="25" pathnode="false"/>
+										<position x="99" y="22" pathnode="false"/>
+										<position x="99" y="19" pathnode="false"/>
+										<position x="99" y="16" pathnode="false"/>
+										<position x="97" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[7].LoLim</expression>
+							</outVariable>
+							<outVariable localId="54" width="26" height="2">
+								<position x="101" y="36"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="55">
+										<position x="101" y="37" pathnode="false"/>
+										<position x="99" y="37" pathnode="false"/>
+										<position x="99" y="34" pathnode="false"/>
+										<position x="99" y="31" pathnode="false"/>
+										<position x="99" y="28" pathnode="false"/>
+										<position x="99" y="25" pathnode="false"/>
+										<position x="99" y="22" pathnode="false"/>
+										<position x="99" y="19" pathnode="false"/>
+										<position x="99" y="16" pathnode="false"/>
+										<position x="97" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[8].LoLim</expression>
+							</outVariable>
+							<inVariable localId="55" width="6" height="2">
+								<position x="91" y="15"/>
+								<connectionPointOut>
+									<relPosition x="6" y="1"/>
+								</connectionPointOut>
+								<expression>0.0</expression>
+							</inVariable>
+							<outVariable localId="56" width="25" height="2">
+								<position x="147" y="15"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="64">
+										<position x="147" y="16" pathnode="false"/>
+										<position x="145" y="16" pathnode="false"/>
+										<position x="143" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[1].HiLim</expression>
+							</outVariable>
+							<outVariable localId="57" width="25" height="2">
+								<position x="147" y="18"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="64">
+										<position x="147" y="19" pathnode="false"/>
+										<position x="145" y="19" pathnode="false"/>
+										<position x="145" y="16" pathnode="false"/>
+										<position x="143" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[2].HiLim</expression>
+							</outVariable>
+							<outVariable localId="58" width="25" height="2">
+								<position x="147" y="21"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="64">
+										<position x="147" y="22" pathnode="false"/>
+										<position x="145" y="22" pathnode="false"/>
+										<position x="145" y="19" pathnode="false"/>
+										<position x="145" y="16" pathnode="false"/>
+										<position x="143" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[3].HiLim</expression>
+							</outVariable>
+							<outVariable localId="59" width="25" height="2">
+								<position x="147" y="24"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="64">
+										<position x="147" y="25" pathnode="false"/>
+										<position x="145" y="25" pathnode="false"/>
+										<position x="145" y="22" pathnode="false"/>
+										<position x="145" y="19" pathnode="false"/>
+										<position x="145" y="16" pathnode="false"/>
+										<position x="143" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[4].HiLim</expression>
+							</outVariable>
+							<outVariable localId="60" width="25" height="2">
+								<position x="147" y="27"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="64">
+										<position x="147" y="28" pathnode="false"/>
+										<position x="145" y="28" pathnode="false"/>
+										<position x="145" y="25" pathnode="false"/>
+										<position x="145" y="22" pathnode="false"/>
+										<position x="145" y="19" pathnode="false"/>
+										<position x="145" y="16" pathnode="false"/>
+										<position x="143" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[5].HiLim</expression>
+							</outVariable>
+							<outVariable localId="61" width="25" height="2">
+								<position x="147" y="30"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="64">
+										<position x="147" y="31" pathnode="false"/>
+										<position x="145" y="31" pathnode="false"/>
+										<position x="145" y="28" pathnode="false"/>
+										<position x="145" y="25" pathnode="false"/>
+										<position x="145" y="22" pathnode="false"/>
+										<position x="145" y="19" pathnode="false"/>
+										<position x="145" y="16" pathnode="false"/>
+										<position x="143" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[6].HiLim</expression>
+							</outVariable>
+							<outVariable localId="62" width="25" height="2">
+								<position x="147" y="33"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="64">
+										<position x="147" y="34" pathnode="false"/>
+										<position x="145" y="34" pathnode="false"/>
+										<position x="145" y="31" pathnode="false"/>
+										<position x="145" y="28" pathnode="false"/>
+										<position x="145" y="25" pathnode="false"/>
+										<position x="145" y="22" pathnode="false"/>
+										<position x="145" y="19" pathnode="false"/>
+										<position x="145" y="16" pathnode="false"/>
+										<position x="143" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[7].HiLim</expression>
+							</outVariable>
+							<outVariable localId="63" width="25" height="2">
+								<position x="147" y="36"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="64">
+										<position x="147" y="37" pathnode="false"/>
+										<position x="145" y="37" pathnode="false"/>
+										<position x="145" y="34" pathnode="false"/>
+										<position x="145" y="31" pathnode="false"/>
+										<position x="145" y="28" pathnode="false"/>
+										<position x="145" y="25" pathnode="false"/>
+										<position x="145" y="22" pathnode="false"/>
+										<position x="145" y="19" pathnode="false"/>
+										<position x="145" y="16" pathnode="false"/>
+										<position x="143" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[8].HiLim</expression>
+							</outVariable>
+							<inVariable localId="64" width="8" height="2">
+								<position x="135" y="15"/>
+								<connectionPointOut>
+									<relPosition x="8" y="1"/>
+								</connectionPointOut>
+								<expression>100.0</expression>
+							</inVariable>
+							<inVariable localId="65" width="20" height="2">
+								<position x="42" y="56"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>BYTE#2#1111_1111</expression>
+							</inVariable>
+							<comment localId="66" width="22" height="3">
+								<position x="13" y="56"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">Все каналы активны</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="68" width="21" height="2">
+								<position x="8" y="96"/>
+								<connectionPointOut>
+									<relPosition x="21" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[2].Value</expression>
+							</inVariable>
+							<outVariable localId="69" width="19" height="2">
+								<position x="32" y="96"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="68">
+										<position x="32" y="97" pathnode="false"/>
+										<position x="29" y="97" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>rCurrent_Value_Ch2</expression>
+							</outVariable>
+							<inVariable localId="72" width="21" height="2">
+								<position x="8" y="100"/>
+								<connectionPointOut>
+									<relPosition x="21" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[3].Value</expression>
+							</inVariable>
+							<outVariable localId="73" width="19" height="2">
+								<position x="32" y="100"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="72">
+										<position x="32" y="101" pathnode="false"/>
+										<position x="29" y="101" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>rCurrent_Value_Ch3</expression>
+							</outVariable>
+							<inVariable localId="74" width="21" height="2">
+								<position x="8" y="104"/>
+								<connectionPointOut>
+									<relPosition x="21" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[4].Value</expression>
+							</inVariable>
+							<outVariable localId="75" width="19" height="2">
+								<position x="32" y="104"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="74">
+										<position x="32" y="105" pathnode="false"/>
+										<position x="29" y="105" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>rCurrent_Value_Ch4</expression>
+							</outVariable>
+							<inVariable localId="80" width="21" height="2">
+								<position x="8" y="108"/>
+								<connectionPointOut>
+									<relPosition x="21" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[5].Value</expression>
+							</inVariable>
+							<outVariable localId="81" width="19" height="2">
+								<position x="32" y="108"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="80">
+										<position x="32" y="109" pathnode="false"/>
+										<position x="29" y="109" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>rCurrent_Value_Ch5</expression>
+							</outVariable>
+							<inVariable localId="82" width="21" height="2">
+								<position x="8" y="112"/>
+								<connectionPointOut>
+									<relPosition x="21" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[6].Value</expression>
+							</inVariable>
+							<outVariable localId="83" width="19" height="2">
+								<position x="32" y="112"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="82">
+										<position x="32" y="113" pathnode="false"/>
+										<position x="29" y="113" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>rCurrent_Value_Ch6</expression>
+							</outVariable>
+							<inVariable localId="84" width="21" height="2">
+								<position x="8" y="116"/>
+								<connectionPointOut>
+									<relPosition x="21" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[7].Value</expression>
+							</inVariable>
+							<outVariable localId="85" width="19" height="2">
+								<position x="32" y="116"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="84">
+										<position x="32" y="117" pathnode="false"/>
+										<position x="29" y="117" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>rCurrent_Value_Ch7</expression>
+							</outVariable>
+							<inVariable localId="86" width="21" height="2">
+								<position x="8" y="120"/>
+								<connectionPointOut>
+									<relPosition x="21" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[8].Value</expression>
+							</inVariable>
+							<outVariable localId="87" width="19" height="2">
+								<position x="32" y="120"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="86">
+										<position x="32" y="121" pathnode="false"/>
+										<position x="29" y="121" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>rCurrent_Value_Ch8</expression>
+							</outVariable>
+							<comment localId="88" width="68" height="3">
+								<position x="4" y="44"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#800000;background:#FFFFFF;font-weight:bold;font-style:normal;normal;font-family:Tahoma;width:0px; height:237px; font-size:14.25em" xmlns="http://www.w3.org/1999/xhtml">Передача модулю параметров и получение данных от модуля</p>
+									</html>
+								</content>
+							</comment>
+							<comment localId="89" width="35" height="3">
+								<position x="4" y="88"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#800000;background:#FFFFFF;font-weight:bold;font-style:normal;normal;font-family:Tahoma;width:0px; height:237px; font-size:14.25em" xmlns="http://www.w3.org/1999/xhtml">Вывод значений и диагностика</p>
+									</html>
+								</content>
+							</comment>
+							<inVariable localId="90" width="20" height="2">
+								<position x="58" y="92"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[1].Error</expression>
+							</inVariable>
+							<inVariable localId="91" width="20" height="2">
+								<position x="58" y="96"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[2].Error</expression>
+							</inVariable>
+							<inVariable localId="92" width="20" height="2">
+								<position x="58" y="100"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[3].Error</expression>
+							</inVariable>
+							<inVariable localId="93" width="20" height="2">
+								<position x="58" y="104"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[4].Error</expression>
+							</inVariable>
+							<inVariable localId="94" width="20" height="2">
+								<position x="58" y="108"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[5].Error</expression>
+							</inVariable>
+							<inVariable localId="95" width="20" height="2">
+								<position x="58" y="112"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[6].Error</expression>
+							</inVariable>
+							<inVariable localId="96" width="20" height="2">
+								<position x="58" y="116"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[7].Error</expression>
+							</inVariable>
+							<inVariable localId="97" width="20" height="2">
+								<position x="58" y="120"/>
+								<connectionPointOut>
+									<relPosition x="20" y="1"/>
+								</connectionPointOut>
+								<expression>adtAI8_Data[8].Error</expression>
+							</inVariable>
+							<outVariable localId="98" width="12" height="2">
+								<position x="84" y="92"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="90">
+										<position x="84" y="93" pathnode="false"/>
+										<position x="78" y="93" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>xError_Ch1</expression>
+							</outVariable>
+							<outVariable localId="99" width="12" height="2">
+								<position x="84" y="96"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="91">
+										<position x="84" y="97" pathnode="false"/>
+										<position x="78" y="97" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>xError_Ch2</expression>
+							</outVariable>
+							<outVariable localId="100" width="12" height="2">
+								<position x="84" y="100"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="92">
+										<position x="84" y="101" pathnode="false"/>
+										<position x="78" y="101" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>xError_Ch3</expression>
+							</outVariable>
+							<outVariable localId="101" width="12" height="2">
+								<position x="84" y="104"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="93">
+										<position x="84" y="105" pathnode="false"/>
+										<position x="78" y="105" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>xError_Ch4</expression>
+							</outVariable>
+							<outVariable localId="102" width="12" height="2">
+								<position x="84" y="108"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="94">
+										<position x="84" y="109" pathnode="false"/>
+										<position x="78" y="109" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>xError_Ch5</expression>
+							</outVariable>
+							<outVariable localId="103" width="12" height="2">
+								<position x="84" y="112"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="95">
+										<position x="84" y="113" pathnode="false"/>
+										<position x="78" y="113" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>xError_Ch6</expression>
+							</outVariable>
+							<outVariable localId="104" width="12" height="2">
+								<position x="84" y="116"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="96">
+										<position x="84" y="117" pathnode="false"/>
+										<position x="78" y="117" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>xError_Ch7</expression>
+							</outVariable>
+							<outVariable localId="105" width="12" height="2">
+								<position x="84" y="120"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="97">
+										<position x="84" y="121" pathnode="false"/>
+										<position x="78" y="121" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>xError_Ch8</expression>
+							</outVariable>
+							<comment localId="114" width="22" height="3">
+								<position x="4" y="10"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">10 - 4 mA ... 20 mA</p>
+									</html>
+								</content>
+							</comment>
+							<comment localId="115" width="28" height="3">
+								<position x="49" y="10"/>
+								<content>
+									<html xmlns="http://www.w3.org/1999/xhtml">
+										<p xml:space="preserve" style="color:#000000;background:#FFFFFF;font-weight:normal;font-style:normal;normal;font-family:Tahoma;width:0px; height:225px; font-size:13.50em" xmlns="http://www.w3.org/1999/xhtml">Нормализация от 0 до 100</p>
+									</html>
+								</content>
+							</comment>
+							<outVariable localId="116" width="33" height="2">
+								<position x="56" y="15"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="156">
+										<position x="56" y="16" pathnode="false"/>
+										<position x="54" y="16" pathnode="false"/>
+										<position x="53" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[1].Standardization</expression>
+							</outVariable>
+							<outVariable localId="133" width="33" height="2">
+								<position x="56" y="18"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="156">
+										<position x="56" y="19" pathnode="false"/>
+										<position x="54" y="19" pathnode="false"/>
+										<position x="54" y="16" pathnode="false"/>
+										<position x="53" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[2].Standardization</expression>
+							</outVariable>
+							<outVariable localId="134" width="33" height="2">
+								<position x="56" y="21"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="156">
+										<position x="56" y="22" pathnode="false"/>
+										<position x="54" y="22" pathnode="false"/>
+										<position x="54" y="19" pathnode="false"/>
+										<position x="54" y="16" pathnode="false"/>
+										<position x="53" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[3].Standardization</expression>
+							</outVariable>
+							<outVariable localId="135" width="33" height="2">
+								<position x="56" y="24"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="156">
+										<position x="56" y="25" pathnode="false"/>
+										<position x="54" y="25" pathnode="false"/>
+										<position x="54" y="22" pathnode="false"/>
+										<position x="54" y="19" pathnode="false"/>
+										<position x="54" y="16" pathnode="false"/>
+										<position x="53" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[4].Standardization</expression>
+							</outVariable>
+							<outVariable localId="136" width="33" height="2">
+								<position x="56" y="27"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="156">
+										<position x="56" y="28" pathnode="false"/>
+										<position x="54" y="28" pathnode="false"/>
+										<position x="54" y="25" pathnode="false"/>
+										<position x="54" y="22" pathnode="false"/>
+										<position x="54" y="19" pathnode="false"/>
+										<position x="54" y="16" pathnode="false"/>
+										<position x="53" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[5].Standardization</expression>
+							</outVariable>
+							<outVariable localId="137" width="33" height="2">
+								<position x="56" y="30"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="156">
+										<position x="56" y="31" pathnode="false"/>
+										<position x="54" y="31" pathnode="false"/>
+										<position x="54" y="28" pathnode="false"/>
+										<position x="54" y="25" pathnode="false"/>
+										<position x="54" y="22" pathnode="false"/>
+										<position x="54" y="19" pathnode="false"/>
+										<position x="54" y="16" pathnode="false"/>
+										<position x="53" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[6].Standardization</expression>
+							</outVariable>
+							<outVariable localId="154" width="33" height="2">
+								<position x="56" y="33"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="156">
+										<position x="56" y="34" pathnode="false"/>
+										<position x="54" y="34" pathnode="false"/>
+										<position x="54" y="31" pathnode="false"/>
+										<position x="54" y="28" pathnode="false"/>
+										<position x="54" y="25" pathnode="false"/>
+										<position x="54" y="22" pathnode="false"/>
+										<position x="54" y="19" pathnode="false"/>
+										<position x="54" y="16" pathnode="false"/>
+										<position x="53" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[7].Standardization</expression>
+							</outVariable>
+							<outVariable localId="155" width="33" height="2">
+								<position x="56" y="36"/>
+								<connectionPointIn>
+									<relPosition x="0" y="1"/>
+									<connection refLocalId="156">
+										<position x="56" y="37" pathnode="false"/>
+										<position x="54" y="37" pathnode="false"/>
+										<position x="54" y="34" pathnode="false"/>
+										<position x="54" y="31" pathnode="false"/>
+										<position x="54" y="28" pathnode="false"/>
+										<position x="54" y="25" pathnode="false"/>
+										<position x="54" y="22" pathnode="false"/>
+										<position x="54" y="19" pathnode="false"/>
+										<position x="54" y="16" pathnode="false"/>
+										<position x="53" y="16" pathnode="false"/>
+									</connection>
+								</connectionPointIn>
+								<expression>udtAI8_Parameter[8].Standardization</expression>
+							</outVariable>
+							<inVariable localId="156" width="8" height="2">
+								<position x="45" y="15"/>
+								<connectionPointOut>
+									<relPosition x="8" y="1"/>
+								</connectionPointOut>
+								<expression>TRUE</expression>
+							</inVariable>
+						</worksheet>
+					</FBD>
+				</body>
+				<documentation>
+					<html xmlns="http://www.w3.org/1999/xhtml">
+						<div xml:space="preserve" id="MWTDESCRIPTION" wsName="MainT" xmlns="http://www.w3.org/1999/xhtml"/>
+					</html>
+				</documentation>
+			</pou>
+		</pous>
+	</types>
+	<instances>
+		<configurations>
+			<configuration name="STD_CNF" plcType="eCLR">
+				<resource name="STD_RES" procType="ILC131_40" watchdogTimeDefaultTask="00:00:00.100" stackDefaultTask="MEDIUM" saveFPUDefaultTask="false" noSuspendDefaultTask="false">
+					<globalVars retain="false">
+						<variable name="dwAI8_DP_IN" address="%ID1" group="Process Data">
+							<type>
+								<DWORD/>
+							</type>
+						</variable>
+						<variable name="dwAI8_PD_OUT" address="%QD1" group="Process Data">
+							<type>
+								<DWORD/>
+							</type>
+						</variable>
+						<variable name="COP_CPU_LOAD_WARNING" address="%MX1.60182.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">The controller is approaching its processor capacity limit</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_PARAM_2_REG" address="%MW1.60024" group="System Variables">
+							<type>
+								<WORD/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Extended diagnostic parameter register of the control processor</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_PARAM_REG" address="%MW1.60022" group="System Variables">
+							<type>
+								<WORD/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Diagnostic parameter register of the control processor</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FAT_ERR" address="%MX1.60157.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Fatal error (control processor)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FC_DBG" address="%MX1.60164.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime system DEBUG</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FC_HALT" address="%MX1.60162.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime system HALT</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FC_LDG" address="%MX1.60163.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime system LOADING</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FC_RDO" address="%MX1.60165.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime system READONLY</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FC_RUN" address="%MX1.60160.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime system RUN</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_FC_STOP" address="%MX1.60161.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime system STOP</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_PON" address="%MX1.60159.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Power on (control processor)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_RT_ERR" address="%MX1.60156.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Runtime error (control processor)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="COP_DIAG_STATUS_REG_WARN" address="%MX1.60158.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Warning (control processor)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="FLASHCARD_PRESENT" address="%MX1.60168.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Phoenix Contact SD card inserted</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="IB_DEVICE_PARAM_ACTIVATED" address="%MX1.60120.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Interbus device configuration activated</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="IB_DEVICE_PARAM_ERROR" address="%MX1.60122.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Interbus device configuration error</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="IB_DEVICE_PARAM_READY" address="%MX1.60121.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Interbus device configuration completed</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="KEY_SWITCH_RESET" address="%MX1.60178.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Start/stop switch in MRESET position</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="KEY_SWITCH_RUN_PROG" address="%MX1.60181.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Start/stop switch in RUN/PROG position</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="KEY_SWITCH_STOP" address="%MX1.60179.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Start/stop switch in STOP position</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="LICENSE" address="%MD1.60112" group="System Variables">
+							<type>
+								<DWORD/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">License information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_PARAM_2_REG_HI" address="%MB1.60005" group="System Variables">
+							<type>
+								<BYTE/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Extended master diagnostic parameter register 2 high byte</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_PARAM_2_REG_LOW" address="%MB1.60004" group="System Variables">
+							<type>
+								<BYTE/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Extended master diagnostic parameter register 2 low byte</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_PARAM_REG_HI" address="%MB1.60003" group="System Variables">
+							<type>
+								<BYTE/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Master diagnostic parameter register high byte</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_PARAM_REG_LOW" address="%MB1.60002" group="System Variables">
+							<type>
+								<BYTE/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Master diagnostic parameter register low byte</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_ACT" address="%MX1.60154.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Selected configuration ready to operate</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_BSA" address="%MX1.60140.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Bus segment disconnected</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_BUS" address="%MX1.60150.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Bus error</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_CTRL" address="%MX1.60151.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Fault on the controller board/hardware</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_DCR" address="%MX1.60144.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Faulty data cycles</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_DTC" address="%MX1.60152.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Diagnostic routine active</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_HI" address="%MB1.60001" group="System Variables">
+							<type>
+								<BYTE/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Master diagnostic status register high byte</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_LOW" address="%MB1.60000" group="System Variables">
+							<type>
+								<BYTE/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Master diagnostic status register low byte</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_PF" address="%MX1.60149.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Peripheral fault</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_QUAL" address="%MX1.60146.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Defined error density exceeded</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_RDY" address="%MX1.60155.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Controller board ready to operate</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_RES" address="%MX1.60142.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Standard function processed negatively</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_RUN" address="%MX1.60153.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Data transmission active</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_SSINFO" address="%MX1.60147.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Pending message</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_SYNCRES" address="%MX1.60143.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Synchronization error</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_SYSFAIL" address="%MX1.60141.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System failure</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_USER" address="%MX1.60148.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">User error/parameterization</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="MASTER_DIAG_STATUS_REG_WARN" address="%MX1.60145.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Defined warning time exceeded</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT" address="%MW1.60040" group="System Variables">
+							<type>
+								<WORD/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local inputs</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT0" address="%MX1.60183.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN1</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT1" address="%MX1.60184.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN2</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT2" address="%MX1.60185.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN3</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT3" address="%MX1.60186.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN4</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT4" address="%MX1.60187.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN5</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT5" address="%MX1.60188.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN6</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT6" address="%MX1.60189.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN7</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_INPUT_BIT7" address="%MX1.60190.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local input IN8</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_OUTPUT_BIT0" address="%MX3.61000.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local output OUT1</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_OUTPUT_BIT1" address="%MX3.61001.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local output OUT2</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_OUTPUT_BIT2" address="%MX3.61002.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local output OUT3</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_OUTPUT_BIT3" address="%MX3.61003.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local output OUT4</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="ONBOARD_OUTPUT_OVERLOAD_0_3" address="%MX1.60169.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Local I/O overload</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_ERRORS" address="%MD1.2008" group="System Variables">
+							<type>
+								<DINT/>
+							</type>
+						</variable>
+						<variable name="PLC_MAX_ERRORS" address="%MD1.2004" group="System Variables">
+							<type>
+								<DINT/>
+							</type>
+						</variable>
+						<variable name="PLC_SYS_TICK_CNT" address="%MD1.0" group="System Variables">
+							<type>
+								<DINT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Number of system ticks</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_SYSTASK_AVAILABLE" address="%MW1.2016" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Number of available system tasks</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_1" address="%MB1.5000" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 1 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_2" address="%MB1.5128" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 2 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_3" address="%MB1.5256" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 3 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_4" address="%MB1.5384" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 4 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_5" address="%MB1.5512" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 5 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_6" address="%MB1.5640" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 6 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_7" address="%MB1.5768" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 7 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_8" address="%MB1.5896" group="System Variables">
+							<type>
+								<derived name="Task_Info_eCLR"/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Task 8 information</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_AVAILABLE" address="%MW1.2012" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Number of available PLC tasks</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TASK_DEFINED" address="%MW1.4" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Number of tasks used</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLC_TICKS_PER_SEC" address="%MW1.2000" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System ticks per second</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCDEBUG_BPSET" address="%MX1.2019.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Breakpoint set</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCDEBUG_FORCE" address="%MX1.2018.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Variable(s) forced</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCDEBUG_POWERFLOW" address="%MX1.2020.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Address status enabled</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCMODE_HALT" address="%MX1.8.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">PLC status HALT</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCMODE_LOADING" address="%MX1.2017.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">PLC status LOADING</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCMODE_ON" address="%MX1.2016.0" pdd="true" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">PLC status ON</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCMODE_RUN" address="%MX1.7.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">PLC status RUN</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="PLCMODE_STOP" address="%MX1.6.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">PLC status STOP</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="POWER_SUPPLY_INPUTS_OK" address="%MX1.60172.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">24 V local input supply OK</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="POWER_SUPPLY_MAIN_OK" address="%MX1.60171.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">24 V main supply voltage OK</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="POWER_SUPPLY_OUTPUTS_0_3_OK" address="%MX1.60173.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">24 V local output supply OK (bits 0...3)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_BATTERY_LOW" address="%MX1.60166.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Realtime clock battery capacity low</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_DATA_INVALID" address="%MX1.60167.0" group="System Variables">
+							<type>
+								<BOOL/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">Realtime clock data invalid</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_DAY" address="%MW1.60068" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System time (day)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_HOURS" address="%MW1.60060" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System time (hours)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_MINUTES" address="%MW1.60062" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System time (minutes)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_MONTH" address="%MW1.60070" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System time (month)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_SECONDS" address="%MW1.60064" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System time (seconds)</p>
+								</html>
+							</documentation>
+						</variable>
+						<variable name="RTC_YEAR" address="%MW1.60072" group="System Variables">
+							<type>
+								<INT/>
+							</type>
+							<documentation>
+								<html xmlns="http://www.w3.org/1999/xhtml">
+									<p xml:space="preserve" xmlns="http://www.w3.org/1999/xhtml">System time (year)</p>
+								</html>
+							</documentation>
+						</variable>
+					</globalVars>
+					<pouInstance name="Main:Main" type="program">
+						<globalVarsPg retain="false">
+							<variable name="" group="Default">
+								<type>
+									<INT/>
+								</type>
+							</variable>
+						</globalVarsPg>
+					</pouInstance>
+				</resource>
+			</configuration>
+		</configurations>
+	</instances>
+</project>
